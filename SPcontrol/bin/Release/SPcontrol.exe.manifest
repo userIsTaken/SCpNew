@@ -73,17 +73,17 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>ZIqsyvZijuvWxdv4n6nx5cEbYPE=</dsig:DigestValue>
+        <dsig:DigestValue>swK+ti6WOa2BtHqyLuQiUYvPHs8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="SPcontrol.exe.config" size="184">
+  <file name="SPcontrol.exe.config" size="178">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>V4WyfI7Afij77ZC4Fb71+C3XBqM=</dsig:DigestValue>
+      <dsig:DigestValue>7xQ+AmKJmHkRdmzH8LUO5QjeSgo=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

@@ -3205,6 +3205,17 @@ namespace SPcontrol
             mPar.StartingEnergy = (double)startEnergyBox.Value;
             mPar.EndingEnergy = (double)stopEnergyBox.Value;
             mPar.Counts = (double)measureTimesBox.Value;
+            //===============================================================
+            appendText();
+            double time = (double)Ts_box.Value * 1.1;
+            double counts = ExternalFunctions.returnCounts((double)measureTimesBox.Value, (double)startEnergyBox.Value,
+                (double)stopEnergyBox.Value, (double)stepBoxForAnotherThread.Value);
+            appendText("Matavimų taškų bus apytiksliai ", counts);
+            appendText("Matavimai truks maždaug [s]", counts * time);
+            double minutes = (counts * time - (counts * time) % 60) / 60;
+            appendText("Matavimai truks maždaug  ", minutes, " min. ", (int)((counts * time) % 60), " sekund.");
+            appendText();
+            //======================================
             //paleidžiamas thread'as
             slightlyDifferentWorkerThread.RunWorkerAsync(mPar);
             runAnotherThreadButton.Enabled = false;
