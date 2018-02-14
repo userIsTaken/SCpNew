@@ -1,0 +1,3 @@
+Eil.Nr.   ;hv, [eV]  ;Ni vertė  ;Ni/min.   ;Sqrt(Ni)  ;N,cLight! ;Įtampa, V ;
+
+? Ts :  5   Tz :  0   Tq :   0    Vq :  0   Cth :  2  2017-10-11 23:24:49  ;

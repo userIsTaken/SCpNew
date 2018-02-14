@@ -1,0 +1,3 @@
+ StreamWriter writer = new StreamWriter(FileName);
+                writer.Write(ALL_Tex+newLine+Parameters); //Importuojant geriau, kai skiriamasis simbolis yra ; o ne |, | naudojamas pseudolentelės formavimui;
+                writer.Close();

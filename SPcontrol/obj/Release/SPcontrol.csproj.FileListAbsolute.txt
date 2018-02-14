@@ -1,0 +1,16 @@
+C:\Users\A330Lab\Desktop\ThisIsNewSp\SPcontrol\bin\Release\SPcontrol.exe.config
+C:\Users\A330Lab\Desktop\ThisIsNewSp\SPcontrol\obj\Release\SPcontrol.csproj.ResolveComReference.cache
+C:\Users\A330Lab\Desktop\ThisIsNewSp\SPcontrol\bin\Release\SPcontrol.exe
+C:\Users\A330Lab\Desktop\ThisIsNewSp\SPcontrol\bin\Release\SPcontrol.pdb
+C:\Users\A330Lab\Desktop\ThisIsNewSp\SPcontrol\bin\Release\Cornerstone.dll
+C:\Users\A330Lab\Desktop\ThisIsNewSp\SPcontrol\bin\Release\CyUSB.dll
+C:\Users\A330Lab\Desktop\ThisIsNewSp\SPcontrol\obj\Release\SPcontrol.SPControl.resources
+C:\Users\A330Lab\Desktop\ThisIsNewSp\SPcontrol\obj\Release\SPcontrol.Properties.Resources.resources
+C:\Users\A330Lab\Desktop\ThisIsNewSp\SPcontrol\obj\Release\SPcontrol.csproj.GenerateResource.Cache
+C:\Users\A330Lab\Desktop\ThisIsNewSp\SPcontrol\obj\Release\SPcontrol.exe
+C:\Users\A330Lab\Desktop\ThisIsNewSp\SPcontrol\obj\Release\SPcontrol.pdb
+C:\Users\A330Lab\Desktop\ThisIsNewSp\SPcontrol\bin\Release\SPcontrol.exe.manifest
+C:\Users\A330Lab\Desktop\ThisIsNewSp\SPcontrol\bin\Release\SPcontrol.application
+C:\Users\A330Lab\Desktop\ThisIsNewSp\SPcontrol\obj\Release\SPcontrol.exe.manifest
+C:\Users\A330Lab\Desktop\ThisIsNewSp\SPcontrol\obj\Release\SPcontrol.application
+C:\Users\A330Lab\Desktop\ThisIsNewSp\SPcontrol\obj\Release\SPcontrol.csprojResolveAssemblyReference.cache

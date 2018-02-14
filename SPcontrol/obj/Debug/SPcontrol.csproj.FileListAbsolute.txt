@@ -1,0 +1,73 @@
+c:\users\egis\documents\visual studio 2015\Projects\SPcontrol\SPcontrol\bin\Debug\SPcontrol.exe.config
+c:\users\egis\documents\visual studio 2015\Projects\SPcontrol\SPcontrol\bin\Debug\SPcontrol.exe
+c:\users\egis\documents\visual studio 2015\Projects\SPcontrol\SPcontrol\bin\Debug\SPcontrol.pdb
+c:\users\egis\documents\visual studio 2015\Projects\SPcontrol\SPcontrol\obj\Debug\SPcontrol.csprojResolveAssemblyReference.cache
+c:\users\egis\documents\visual studio 2015\Projects\SPcontrol\SPcontrol\obj\Debug\SPcontrol.SPControl.resources
+c:\users\egis\documents\visual studio 2015\Projects\SPcontrol\SPcontrol\obj\Debug\SPcontrol.Properties.Resources.resources
+c:\users\egis\documents\visual studio 2015\Projects\SPcontrol\SPcontrol\obj\Debug\SPcontrol.csproj.GenerateResource.Cache
+c:\users\egis\documents\visual studio 2015\Projects\SPcontrol\SPcontrol\obj\Debug\SPcontrol.exe
+c:\users\egis\documents\visual studio 2015\Projects\SPcontrol\SPcontrol\obj\Debug\SPcontrol.pdb
+G:\Workspace\cs\SPcontrol\SPcontrol\bin\Debug\SPcontrol.exe
+G:\Workspace\cs\SPcontrol\SPcontrol\bin\Debug\SPcontrol.exe.config
+G:\Workspace\cs\SPcontrol\SPcontrol\obj\Debug\SPcontrol.SPControl.resources
+G:\Workspace\cs\SPcontrol\SPcontrol\obj\Debug\SPcontrol.Properties.Resources.resources
+G:\Workspace\cs\SPcontrol\SPcontrol\obj\Debug\SPcontrol.csproj.GenerateResource.Cache
+G:\Workspace\cs\SPcontrol\SPcontrol\obj\Debug\SPcontrol.exe
+G:\Workspace\cs\SPcontrol\SPcontrol\obj\Debug\SPcontrol.pdb
+G:\Workspace\cs\SPcontrol\SPcontrol\bin\Debug\SPcontrol.pdb
+G:\Workspace\cs\SPcontrol\SPcontrol\obj\Debug\SPcontrol.csprojResolveAssemblyReference.cache
+G:\Workspace\cs\SPcontrol\SPcontrol\obj\Debug\Interop.Origin.dll
+G:\Workspace\cs\SPcontrol\SPcontrol\obj\Debug\SPcontrol.csproj.ResolveComReference.cache
+D:\Dropbox\Workspace\cs\SPcontrol\SPcontrol\bin\Debug\SPcontrol.exe.config
+D:\Dropbox\Workspace\cs\SPcontrol\SPcontrol\bin\Debug\SPcontrol.exe
+D:\Dropbox\Workspace\cs\SPcontrol\SPcontrol\bin\Debug\SPcontrol.pdb
+D:\Dropbox\Workspace\cs\SPcontrol\SPcontrol\bin\Debug\Cornerstone.dll
+D:\Dropbox\Workspace\cs\SPcontrol\SPcontrol\bin\Debug\CyUSB.dll
+D:\Dropbox\Workspace\cs\SPcontrol\SPcontrol\obj\Debug\SPcontrol.csproj.ResolveComReference.cache
+D:\Dropbox\Workspace\cs\SPcontrol\SPcontrol\obj\Debug\SPcontrol.SPControl.resources
+D:\Dropbox\Workspace\cs\SPcontrol\SPcontrol\obj\Debug\SPcontrol.Properties.Resources.resources
+D:\Dropbox\Workspace\cs\SPcontrol\SPcontrol\obj\Debug\SPcontrol.csproj.GenerateResource.Cache
+D:\Dropbox\Workspace\cs\SPcontrol\SPcontrol\obj\Debug\SPcontrol.exe
+D:\Dropbox\Workspace\cs\SPcontrol\SPcontrol\obj\Debug\SPcontrol.pdb
+C:\Users\Egis\Desktop\SPcontrol\SPcontrol\bin\Debug\SPcontrol.exe.config
+C:\Users\Egis\Desktop\SPcontrol\SPcontrol\bin\Debug\SPcontrol.exe
+C:\Users\Egis\Desktop\SPcontrol\SPcontrol\bin\Debug\SPcontrol.pdb
+C:\Users\Egis\Desktop\SPcontrol\SPcontrol\bin\Debug\Cornerstone.dll
+C:\Users\Egis\Desktop\SPcontrol\SPcontrol\bin\Debug\CyUSB.dll
+C:\Users\Egis\Desktop\SPcontrol\SPcontrol\obj\Debug\SPcontrol.csproj.ResolveComReference.cache
+C:\Users\Egis\Desktop\SPcontrol\SPcontrol\obj\Debug\SPcontrol.SPControl.resources
+C:\Users\Egis\Desktop\SPcontrol\SPcontrol\obj\Debug\SPcontrol.Properties.Resources.resources
+C:\Users\Egis\Desktop\SPcontrol\SPcontrol\obj\Debug\SPcontrol.csproj.GenerateResource.Cache
+C:\Users\Egis\Desktop\SPcontrol\SPcontrol\obj\Debug\SPcontrol.exe
+C:\Users\Egis\Desktop\SPcontrol\SPcontrol\obj\Debug\SPcontrol.pdb
+C:\Users\Egis\Desktop\SPcontrol\SPcontrol\obj\Debug\SPcontrol.csprojResolveAssemblyReference.cache
+C:\Users\A330Lab\Desktop\SPcontrol\SPcontrol\bin\Debug\SPcontrol.exe.config
+C:\Users\A330Lab\Desktop\SPcontrol\SPcontrol\bin\Debug\SPcontrol.exe
+C:\Users\A330Lab\Desktop\SPcontrol\SPcontrol\bin\Debug\SPcontrol.pdb
+C:\Users\A330Lab\Desktop\SPcontrol\SPcontrol\bin\Debug\Cornerstone.dll
+C:\Users\A330Lab\Desktop\SPcontrol\SPcontrol\bin\Debug\CyUSB.dll
+C:\Users\A330Lab\Desktop\SPcontrol\SPcontrol\obj\Debug\SPcontrol.csprojResolveAssemblyReference.cache
+C:\Users\A330Lab\Desktop\SPcontrol\SPcontrol\obj\Debug\SPcontrol.csproj.ResolveComReference.cache
+C:\Users\A330Lab\Desktop\SPcontrol\SPcontrol\obj\Debug\SPcontrol.SPControl.resources
+C:\Users\A330Lab\Desktop\SPcontrol\SPcontrol\obj\Debug\SPcontrol.Properties.Resources.resources
+C:\Users\A330Lab\Desktop\SPcontrol\SPcontrol\obj\Debug\SPcontrol.csproj.GenerateResource.Cache
+C:\Users\A330Lab\Desktop\SPcontrol\SPcontrol\obj\Debug\SPcontrol.exe
+C:\Users\A330Lab\Desktop\SPcontrol\SPcontrol\obj\Debug\SPcontrol.pdb
+C:\Users\A330Lab\Desktop\SPcontrol\SPcontrol\bin\Debug\Ivi.Visa.dll
+C:\Users\A330Lab\Desktop\SPcontrol\SPcontrol\bin\Debug\Ivi.Visa.xml
+C:\Users\A330Lab\Desktop\ThisIsNewSp\SPcontrol\bin\Debug\SPcontrol.exe.config
+C:\Users\A330Lab\Desktop\ThisIsNewSp\SPcontrol\bin\Debug\SPcontrol.exe
+C:\Users\A330Lab\Desktop\ThisIsNewSp\SPcontrol\bin\Debug\SPcontrol.pdb
+C:\Users\A330Lab\Desktop\ThisIsNewSp\SPcontrol\bin\Debug\Cornerstone.dll
+C:\Users\A330Lab\Desktop\ThisIsNewSp\SPcontrol\bin\Debug\CyUSB.dll
+C:\Users\A330Lab\Desktop\ThisIsNewSp\SPcontrol\obj\Debug\SPcontrol.csproj.ResolveComReference.cache
+C:\Users\A330Lab\Desktop\ThisIsNewSp\SPcontrol\obj\Debug\SPcontrol.SPControl.resources
+C:\Users\A330Lab\Desktop\ThisIsNewSp\SPcontrol\obj\Debug\SPcontrol.Properties.Resources.resources
+C:\Users\A330Lab\Desktop\ThisIsNewSp\SPcontrol\obj\Debug\SPcontrol.csproj.GenerateResource.Cache
+C:\Users\A330Lab\Desktop\ThisIsNewSp\SPcontrol\obj\Debug\SPcontrol.exe
+C:\Users\A330Lab\Desktop\ThisIsNewSp\SPcontrol\obj\Debug\SPcontrol.pdb
+C:\Users\A330Lab\Desktop\ThisIsNewSp\SPcontrol\bin\Debug\SPcontrol.exe.manifest
+C:\Users\A330Lab\Desktop\ThisIsNewSp\SPcontrol\bin\Debug\SPcontrol.application
+C:\Users\A330Lab\Desktop\ThisIsNewSp\SPcontrol\obj\Debug\SPcontrol.csprojResolveAssemblyReference.cache
+C:\Users\A330Lab\Desktop\ThisIsNewSp\SPcontrol\obj\Debug\SPcontrol.exe.manifest
+C:\Users\A330Lab\Desktop\ThisIsNewSp\SPcontrol\obj\Debug\SPcontrol.application
