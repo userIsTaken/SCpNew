@@ -275,6 +275,7 @@
             this.label52 = new System.Windows.Forms.Label();
             this.standby_box = new System.Windows.Forms.NumericUpDown();
             this.label57 = new System.Windows.Forms.Label();
+            this.delay_box = new System.Windows.Forms.NumericUpDown();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.resultsViewChart)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -362,6 +363,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.measureTimesBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stepBoxForAnotherThread)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.standby_box)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.delay_box)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -2301,6 +2303,7 @@
             this.tableLayoutPanel14.Controls.Add(this.fromMinimumCheckBox, 4, 2);
             this.tableLayoutPanel14.Controls.Add(this.label56, 7, 4);
             this.tableLayoutPanel14.Controls.Add(this.label57, 7, 3);
+            this.tableLayoutPanel14.Controls.Add(this.delay_box, 8, 3);
             this.tableLayoutPanel14.Name = "tableLayoutPanel14";
             // 
             // label50
@@ -2571,6 +2574,11 @@
             resources.ApplyResources(this.label57, "label57");
             this.label57.Name = "label57";
             // 
+            // delay_box
+            // 
+            resources.ApplyResources(this.delay_box, "delay_box");
+            this.delay_box.Name = "delay_box";
+            // 
             // SPControl
             // 
             resources.ApplyResources(this, "$this");
@@ -2684,6 +2692,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.measureTimesBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stepBoxForAnotherThread)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.standby_box)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.delay_box)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2931,6 +2940,7 @@
         private System.Windows.Forms.Label label52;
         private System.Windows.Forms.NumericUpDown standby_box;
         private System.Windows.Forms.Label label57;
+        private System.Windows.Forms.NumericUpDown delay_box;
     }
 }
 

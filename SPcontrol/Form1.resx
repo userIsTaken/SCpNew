@@ -7318,11 +7318,14 @@ kas Ψ sek.</value>
   <data name="label57.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="label57.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
   <data name="label57.Location" type="System.Drawing.Point, System.Drawing">
     <value>633, 90</value>
   </data>
   <data name="label57.Size" type="System.Drawing.Size, System.Drawing">
-    <value>67, 17</value>
+    <value>84, 30</value>
   </data>
   <data name="label57.TabIndex" type="System.Int32, mscorlib">
     <value>113</value>
@@ -7341,6 +7344,33 @@ kas Ψ sek.</value>
   </data>
   <data name="&gt;&gt;label57.ZOrder" xml:space="preserve">
     <value>19</value>
+  </data>
+  <data name="delay_box.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="delay_box.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="delay_box.Location" type="System.Drawing.Point, System.Drawing">
+    <value>723, 93</value>
+  </data>
+  <data name="delay_box.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 26</value>
+  </data>
+  <data name="delay_box.TabIndex" type="System.Int32, mscorlib">
+    <value>114</value>
+  </data>
+  <data name="&gt;&gt;delay_box.Name" xml:space="preserve">
+    <value>delay_box</value>
+  </data>
+  <data name="&gt;&gt;delay_box.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;delay_box.Parent" xml:space="preserve">
+    <value>tableLayoutPanel14</value>
+  </data>
+  <data name="&gt;&gt;delay_box.ZOrder" xml:space="preserve">
+    <value>20</value>
   </data>
   <data name="tableLayoutPanel14.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -7370,7 +7400,7 @@ kas Ψ sek.</value>
     <value>0</value>
   </data>
   <data name="tableLayoutPanel14.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="label50" Row="0" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="lightEnergyBox" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label51" Row="1" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="lightLambdaBox" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="setLambdaOnOriel" Row="2" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="anotherOrielResponseLabel" Row="3" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="label53" Row="0" RowSpan="1" Column="4" ColumnSpan="2" /&gt;&lt;Control Name="label54" Row="0" RowSpan="1" Column="6" ColumnSpan="1" /&gt;&lt;Control Name="stopEnergyBox" Row="1" RowSpan="1" Column="6" ColumnSpan="1" /&gt;&lt;Control Name="startEnergyBox" Row="1" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="plusEnergyButton" Row="1" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="minusEnergyButton" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="label55" Row="4" RowSpan="1" Column="4" ColumnSpan="2" /&gt;&lt;Control Name="measureTimesBox" Row="4" RowSpan="1" Column="6" ColumnSpan="1" /&gt;&lt;Control Name="stopAnotherThreadButton" Row="0" RowSpan="1" Column="8" ColumnSpan="1" /&gt;&lt;Control Name="runAnotherThreadButton" Row="1" RowSpan="2" Column="8" ColumnSpan="1" /&gt;&lt;Control Name="stepBoxForAnotherThread" Row="4" RowSpan="1" Column="8" ColumnSpan="1" /&gt;&lt;Control Name="fromMinimumCheckBox" Row="2" RowSpan="1" Column="4" ColumnSpan="2" /&gt;&lt;Control Name="label56" Row="4" RowSpan="1" Column="7" ColumnSpan="1" /&gt;&lt;Control Name="label57" Row="3" RowSpan="1" Column="7" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,90,Absolute,90,Absolute,90,Absolute,90,Absolute,90,Absolute,90,Absolute,90,Absolute,90,Absolute,90,Absolute,90" /&gt;&lt;Rows Styles="Absolute,30,Absolute,30,Absolute,30,Absolute,30,Absolute,30,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="label50" Row="0" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="lightEnergyBox" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label51" Row="1" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="lightLambdaBox" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="setLambdaOnOriel" Row="2" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="anotherOrielResponseLabel" Row="3" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="label53" Row="0" RowSpan="1" Column="4" ColumnSpan="2" /&gt;&lt;Control Name="label54" Row="0" RowSpan="1" Column="6" ColumnSpan="1" /&gt;&lt;Control Name="stopEnergyBox" Row="1" RowSpan="1" Column="6" ColumnSpan="1" /&gt;&lt;Control Name="startEnergyBox" Row="1" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="plusEnergyButton" Row="1" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="minusEnergyButton" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="label55" Row="4" RowSpan="1" Column="4" ColumnSpan="2" /&gt;&lt;Control Name="measureTimesBox" Row="4" RowSpan="1" Column="6" ColumnSpan="1" /&gt;&lt;Control Name="stopAnotherThreadButton" Row="0" RowSpan="1" Column="8" ColumnSpan="1" /&gt;&lt;Control Name="runAnotherThreadButton" Row="1" RowSpan="2" Column="8" ColumnSpan="1" /&gt;&lt;Control Name="stepBoxForAnotherThread" Row="4" RowSpan="1" Column="8" ColumnSpan="1" /&gt;&lt;Control Name="fromMinimumCheckBox" Row="2" RowSpan="1" Column="4" ColumnSpan="2" /&gt;&lt;Control Name="label56" Row="4" RowSpan="1" Column="7" ColumnSpan="1" /&gt;&lt;Control Name="label57" Row="3" RowSpan="1" Column="7" ColumnSpan="1" /&gt;&lt;Control Name="delay_box" Row="3" RowSpan="1" Column="8" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,90,Absolute,90,Absolute,90,Absolute,90,Absolute,90,Absolute,90,Absolute,90,Absolute,90,Absolute,90,Absolute,90" /&gt;&lt;Rows Styles="Absolute,30,Absolute,30,Absolute,30,Absolute,30,Absolute,30,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="otherThreadParameters.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 25</value>

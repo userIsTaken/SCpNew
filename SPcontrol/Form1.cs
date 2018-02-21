@@ -3204,7 +3204,7 @@ namespace SPcontrol
             mPar.Ts = (double)Ts_box.Value;
             mPar.Step = (double)stepBoxForAnotherThread.Value;
             mPar.StepDirection = fromMinimumCheckBox.Checked;
-
+            mPar.StandbyTime = (double)delay_box.Value;
             appendText();
             appendText(mPar.Tq, mPar.Tz, mPar.Cth, mPar.Vq, mPar.Ts);
             appendText("Tq, Tz, Cth, Vq, Ts");
@@ -3234,7 +3234,7 @@ namespace SPcontrol
         {
             MeasurementParameters mP = e.Argument as MeasurementParameters;
             Answer longAts = new Answer();
-            int x = 0;
+            int x = 100; //Čia buvo dalyba iš nulio
             //skaičiavimo komanda:
             uint CmdNmb = 0;
             byte[] cmd = Commands.CmdAskStartCounting(CmdNmb, mP.Ts, mP.Tz, mP.Tq, (decimal)mP.Cth, mP.Vq);
@@ -3283,7 +3283,7 @@ namespace SPcontrol
             {
                 mP.AnswerCRCCode = 0;
                 mP.ExceptionCode = 1;
-                mP.ExceptionMessage = "Tamsos blokas 0" + ex.ToString();
+                mP.ExceptionMessage = "Tamsos blokas 0 |" + ex.ToString();
                 slightlyDifferentWorkerThread.ReportProgress(100, mP);
 
             }
@@ -3292,9 +3292,11 @@ namespace SPcontrol
             try { 
             //=====
             double Count = mP.Counts;
+                Console.WriteLine(Count.ToString(), "Counts|", "|STEP", mP.Step);
             double energy = mP.StartingEnergy;
                 for (double i = 0; i <= Count; i++)
                 {
+                    Thread.Sleep((int)mP.StandbyTime * 1000); //delay
                     while ((energy <= mP.EndingEnergy) && (!slightlyDifferentWorkerThread.CancellationPending))
                     {
                         //====Matavimų ciklas:
