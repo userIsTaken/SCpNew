@@ -73,6 +73,8 @@ namespace SPcontrol
 
         //HW dalis neperduodama.
 
+        public double StandbyTime;
+
 
         public MeasurementParameters()
         {

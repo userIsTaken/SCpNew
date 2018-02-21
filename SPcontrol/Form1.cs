@@ -1565,6 +1565,7 @@ namespace SPcontrol
             mPar.DataLPT = dataLPT;//ką įrašinėti?
             mPar.useLEDorHalogen = useLEDorHalogen;
             stepSize = (double)stepValueBox.Value;
+            mPar.StandbyTime = (double)standby_box.Value;
             if(setStepDirect05eVbox.Checked)
             {
                 mPar.Step = stepSize;
@@ -1595,7 +1596,7 @@ namespace SPcontrol
             double counts = ExternalFunctions.returnCounts((double)measureTimesforOnePointBox.Value, (double)energyDownToValueBox.Value,
                 (double)energyUpToValueBox.Value, stepSize);
             appendText("Matavimų taškų bus apytiksliai ", counts);
-            appendText("Matavimai truks maždaug [s]", counts * time);
+            appendText("Matavimai truks maždaug ", counts * time, " [s.]");
             double minutes = (counts * time - (counts * time) % 60) / 60;
             appendText("Matavimai truks maždaug  ", minutes, " min. ", (int)((counts * time) % 60), " sekund.");
             appendText();
@@ -1703,6 +1704,7 @@ namespace SPcontrol
                         {
                             for (int i = 0; i < Count; i++) //atliekami matavimai Count kartų 
                             {
+                                Thread.Sleep((int)mP.StandbyTime * 1000);
                                 //====Čia įterpiamas LED LPT kodas:
                                 if(mP.UseLPT)
                                 {
@@ -1785,6 +1787,7 @@ namespace SPcontrol
                             ConsoleWriter.WriteOutput("Problemos su cs bangos ilgio nustatymu");
                         }
                         //====Matavmų ciklo pabaiga====
+
                         energy = energy + step;
                     }
                     //Pakartota tamsa:
@@ -1851,6 +1854,7 @@ namespace SPcontrol
                     //tamsos matavimo ciklas
                     for (int i = 0; i < Count; i++)
                     {
+                        Thread.Sleep((int)mP.StandbyTime * 1000);
                         //Ilgas IF tikrinantis threado nutraukimą:
                         if (!longMeasurementsThreadWorker.CancellationPending)
                         {
@@ -1903,6 +1907,7 @@ namespace SPcontrol
                         {
                             for (int i = 0; i < Count; i++) //atliekami matavimai Count kartų 
                             {
+                                Thread.Sleep((int)mP.StandbyTime * 1000);
                                 //====Čia įterpiamas LED LPT kodas:
                                 if (mP.UseLPT)
                                 {
@@ -2048,6 +2053,7 @@ namespace SPcontrol
                             Thread.Sleep(100);
                             for (int i = 0; i < Count; i++) //atliekami matavimai Count kartų 
                             {
+                                Thread.Sleep((int)mP.StandbyTime * 1000);
                                 //====Čia įterpiamas LED LPT kodas:
                                 if (mP.UseLPT)
                                 {
@@ -3198,6 +3204,7 @@ namespace SPcontrol
             mPar.Ts = (double)Ts_box.Value;
             mPar.Step = (double)stepBoxForAnotherThread.Value;
             mPar.StepDirection = fromMinimumCheckBox.Checked;
+
             appendText();
             appendText(mPar.Tq, mPar.Tz, mPar.Cth, mPar.Vq, mPar.Ts);
             appendText("Tq, Tz, Cth, Vq, Ts");

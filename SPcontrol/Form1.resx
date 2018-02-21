@@ -121,11 +121,50 @@
   <data name="tableLayoutPanel1.ColumnCount" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
+  <data name="shutterStatusLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="closeButton.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="shutterStatusLabel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="shutterStatusLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt, style=Bold</value>
+  </data>
+  <data name="shutterStatusLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="shutterStatusLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>423, 0</value>
+  </data>
+  <data name="shutterStatusLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>394, 40</value>
+  </data>
+  <data name="shutterStatusLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>80</value>
+  </data>
+  <data name="shutterStatusLabel.Text" xml:space="preserve">
+    <value>?</value>
+  </data>
+  <data name="shutterStatusLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;shutterStatusLabel.Name" xml:space="preserve">
+    <value>shutterStatusLabel</value>
+  </data>
+  <data name="&gt;&gt;shutterStatusLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;shutterStatusLabel.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;shutterStatusLabel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="closeButton.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
   <data name="closeButton.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt, style=Bold</value>
   </data>
@@ -154,7 +193,7 @@
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;closeButton.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="resultsViewChart.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -181,7 +220,7 @@
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;resultsViewChart.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -202,7 +241,7 @@
     <value>0, 0</value>
   </data>
   <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>820, 24</value>
+    <value>420, 24</value>
   </data>
   <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -220,7 +259,7 @@
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="tableLayoutPanel2.ColumnCount" type="System.Int32, mscorlib">
     <value>5</value>
@@ -1171,7 +1210,7 @@
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;connectionParametersTab.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="tableLayoutPanel8.ColumnCount" type="System.Int32, mscorlib">
     <value>9</value>
@@ -2634,78 +2673,6 @@
   <data name="tableLayoutPanel7.ColumnCount" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="shutterStatusButton.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="shutterStatusButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt, style=Bold</value>
-  </data>
-  <data name="shutterStatusButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="shutterStatusButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="shutterStatusButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>127, 37</value>
-  </data>
-  <data name="shutterStatusButton.TabIndex" type="System.Int32, mscorlib">
-    <value>78</value>
-  </data>
-  <data name="shutterStatusButton.Text" xml:space="preserve">
-    <value>Sklendė ?</value>
-  </data>
-  <data name="&gt;&gt;shutterStatusButton.Name" xml:space="preserve">
-    <value>shutterStatusButton</value>
-  </data>
-  <data name="&gt;&gt;shutterStatusButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;shutterStatusButton.Parent" xml:space="preserve">
-    <value>tableLayoutPanel7</value>
-  </data>
-  <data name="&gt;&gt;shutterStatusButton.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="shutterStatusLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="shutterStatusLabel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="shutterStatusLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt, style=Bold</value>
-  </data>
-  <data name="shutterStatusLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="shutterStatusLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>136, 0</value>
-  </data>
-  <data name="shutterStatusLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>393, 43</value>
-  </data>
-  <data name="shutterStatusLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>80</value>
-  </data>
-  <data name="shutterStatusLabel.Text" xml:space="preserve">
-    <value>?</value>
-  </data>
-  <data name="shutterStatusLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="&gt;&gt;shutterStatusLabel.Name" xml:space="preserve">
-    <value>shutterStatusLabel</value>
-  </data>
-  <data name="&gt;&gt;shutterStatusLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;shutterStatusLabel.Parent" xml:space="preserve">
-    <value>tableLayoutPanel7</value>
-  </data>
-  <data name="&gt;&gt;shutterStatusLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="timeDelayedShutterControlBtn.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -2737,7 +2704,7 @@
     <value>tableLayoutPanel7</value>
   </data>
   <data name="&gt;&gt;timeDelayedShutterControlBtn.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>0</value>
   </data>
   <data name="timeToBeOpenedShutter.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -2764,7 +2731,7 @@
     <value>tableLayoutPanel7</value>
   </data>
   <data name="&gt;&gt;timeToBeOpenedShutter.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>1</value>
   </data>
   <data name="shutterProgress.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -2791,7 +2758,7 @@
     <value>tableLayoutPanel7</value>
   </data>
   <data name="&gt;&gt;shutterProgress.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>2</value>
   </data>
   <data name="tableLayoutPanel7.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -2821,7 +2788,7 @@
     <value>0</value>
   </data>
   <data name="tableLayoutPanel7.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="shutterStatusButton" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="shutterStatusLabel" Row="0" RowSpan="1" Column="1" ColumnSpan="3" /&gt;&lt;Control Name="timeDelayedShutterControlBtn" Row="1" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="timeToBeOpenedShutter" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="shutterProgress" Row="1" RowSpan="1" Column="3" ColumnSpan="3" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,16,66667,Percent,16,66667,Percent,16,66667,Percent,16,66667,Percent,16,66667,Percent,16,66667" /&gt;&lt;Rows Styles="Percent,16,66667,Percent,16,66667,Percent,16,66667,Percent,16,66667,Percent,16,66667,Percent,16,66667" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="timeDelayedShutterControlBtn" Row="1" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="timeToBeOpenedShutter" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="shutterProgress" Row="1" RowSpan="1" Column="3" ColumnSpan="3" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,16,66667,Percent,16,66667,Percent,16,66667,Percent,16,66667,Percent,16,66667,Percent,16,66667" /&gt;&lt;Rows Styles="Percent,16,66667,Percent,16,66667,Percent,16,66667,Percent,16,66667,Percent,16,66667,Percent,16,66667" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="orielControlTab.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 25</value>
@@ -4847,7 +4814,7 @@ kas Ψ sek.</value>
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;microLEDTabs.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="automaticAnswerTextBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -5081,7 +5048,7 @@ kas Ψ sek.</value>
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;errorAndInfoTabs.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="tableLayoutPanel5.ColumnCount" type="System.Int32, mscorlib">
     <value>4</value>
@@ -5315,7 +5282,7 @@ kas Ψ sek.</value>
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;tabControl4.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="tableLayoutPanel9.ColumnCount" type="System.Int32, mscorlib">
     <value>10</value>
@@ -6031,6 +5998,99 @@ kas Ψ sek.</value>
   <data name="&gt;&gt;label31.ZOrder" xml:space="preserve">
     <value>20</value>
   </data>
+  <data name="shutterStatusButton.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="shutterStatusButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt, style=Bold</value>
+  </data>
+  <data name="shutterStatusButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="shutterStatusButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>183, 123</value>
+  </data>
+  <data name="shutterStatusButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 24</value>
+  </data>
+  <data name="shutterStatusButton.TabIndex" type="System.Int32, mscorlib">
+    <value>114</value>
+  </data>
+  <data name="shutterStatusButton.Text" xml:space="preserve">
+    <value>Sklendė ?</value>
+  </data>
+  <data name="&gt;&gt;shutterStatusButton.Name" xml:space="preserve">
+    <value>shutterStatusButton</value>
+  </data>
+  <data name="&gt;&gt;shutterStatusButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;shutterStatusButton.Parent" xml:space="preserve">
+    <value>tableLayoutPanel9</value>
+  </data>
+  <data name="&gt;&gt;shutterStatusButton.ZOrder" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="label52.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label52.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="label52.Location" type="System.Drawing.Point, System.Drawing">
+    <value>633, 90</value>
+  </data>
+  <data name="label52.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 30</value>
+  </data>
+  <data name="label52.TabIndex" type="System.Int32, mscorlib">
+    <value>115</value>
+  </data>
+  <data name="label52.Text" xml:space="preserve">
+    <value>Pauzė [s]</value>
+  </data>
+  <data name="label52.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;label52.Name" xml:space="preserve">
+    <value>label52</value>
+  </data>
+  <data name="&gt;&gt;label52.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label52.Parent" xml:space="preserve">
+    <value>tableLayoutPanel9</value>
+  </data>
+  <data name="&gt;&gt;label52.ZOrder" xml:space="preserve">
+    <value>22</value>
+  </data>
+  <data name="standby_box.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="standby_box.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="standby_box.Location" type="System.Drawing.Point, System.Drawing">
+    <value>723, 93</value>
+  </data>
+  <data name="standby_box.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 26</value>
+  </data>
+  <data name="standby_box.TabIndex" type="System.Int32, mscorlib">
+    <value>116</value>
+  </data>
+  <data name="&gt;&gt;standby_box.Name" xml:space="preserve">
+    <value>standby_box</value>
+  </data>
+  <data name="&gt;&gt;standby_box.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;standby_box.Parent" xml:space="preserve">
+    <value>tableLayoutPanel9</value>
+  </data>
+  <data name="&gt;&gt;standby_box.ZOrder" xml:space="preserve">
+    <value>23</value>
+  </data>
   <data name="tableLayoutPanel9.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -6059,7 +6119,7 @@ kas Ψ sek.</value>
     <value>0</value>
   </data>
   <data name="tableLayoutPanel9.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="useLptBox" Row="4" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="label26" Row="0" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="energyvalueElectronVoltsBox" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label25" Row="1" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="lambdaOrEnergyInputBox" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="setWaveLengthButton" Row="2" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="orielResponseStatus" Row="3" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="label27" Row="0" RowSpan="1" Column="4" ColumnSpan="2" /&gt;&lt;Control Name="label28" Row="0" RowSpan="1" Column="6" ColumnSpan="1" /&gt;&lt;Control Name="energyUpToValueBox" Row="1" RowSpan="1" Column="6" ColumnSpan="1" /&gt;&lt;Control Name="energyDownToValueBox" Row="1" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="pluseVbutton" Row="1" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="minuseVbutton" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="setStepDirect05eVbox" Row="3" RowSpan="1" Column="4" ColumnSpan="3" /&gt;&lt;Control Name="label29" Row="4" RowSpan="1" Column="4" ColumnSpan="2" /&gt;&lt;Control Name="measureTimesforOnePointBox" Row="4" RowSpan="1" Column="6" ColumnSpan="1" /&gt;&lt;Control Name="cancelButton" Row="0" RowSpan="1" Column="8" ColumnSpan="1" /&gt;&lt;Control Name="preesToRunBigCycleButton" Row="1" RowSpan="2" Column="8" ColumnSpan="1" /&gt;&lt;Control Name="stepValueBox" Row="4" RowSpan="1" Column="8" ColumnSpan="1" /&gt;&lt;Control Name="fromSmallestBox" Row="2" RowSpan="1" Column="4" ColumnSpan="2" /&gt;&lt;Control Name="label31" Row="4" RowSpan="1" Column="7" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,90,Absolute,90,Absolute,90,Absolute,90,Absolute,90,Absolute,90,Absolute,90,Absolute,90,Absolute,90,Absolute,90" /&gt;&lt;Rows Styles="Absolute,30,Absolute,30,Absolute,30,Absolute,30,Absolute,30,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="useLptBox" Row="4" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="label26" Row="0" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="energyvalueElectronVoltsBox" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label25" Row="1" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="lambdaOrEnergyInputBox" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="setWaveLengthButton" Row="2" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="orielResponseStatus" Row="3" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="label27" Row="0" RowSpan="1" Column="4" ColumnSpan="2" /&gt;&lt;Control Name="label28" Row="0" RowSpan="1" Column="6" ColumnSpan="1" /&gt;&lt;Control Name="energyUpToValueBox" Row="1" RowSpan="1" Column="6" ColumnSpan="1" /&gt;&lt;Control Name="energyDownToValueBox" Row="1" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="pluseVbutton" Row="1" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="minuseVbutton" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="setStepDirect05eVbox" Row="3" RowSpan="1" Column="4" ColumnSpan="3" /&gt;&lt;Control Name="label29" Row="4" RowSpan="1" Column="4" ColumnSpan="2" /&gt;&lt;Control Name="measureTimesforOnePointBox" Row="4" RowSpan="1" Column="6" ColumnSpan="1" /&gt;&lt;Control Name="cancelButton" Row="0" RowSpan="1" Column="8" ColumnSpan="1" /&gt;&lt;Control Name="preesToRunBigCycleButton" Row="1" RowSpan="2" Column="8" ColumnSpan="1" /&gt;&lt;Control Name="stepValueBox" Row="4" RowSpan="1" Column="8" ColumnSpan="1" /&gt;&lt;Control Name="fromSmallestBox" Row="2" RowSpan="1" Column="4" ColumnSpan="2" /&gt;&lt;Control Name="label31" Row="4" RowSpan="1" Column="7" ColumnSpan="1" /&gt;&lt;Control Name="shutterStatusButton" Row="4" RowSpan="1" Column="2" ColumnSpan="2" /&gt;&lt;Control Name="label52" Row="3" RowSpan="1" Column="7" ColumnSpan="1" /&gt;&lt;Control Name="standby_box" Row="3" RowSpan="1" Column="8" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,90,Absolute,90,Absolute,90,Absolute,90,Absolute,90,Absolute,90,Absolute,90,Absolute,90,Absolute,90,Absolute,90" /&gt;&lt;Rows Styles="Absolute,30,Absolute,30,Absolute,30,Absolute,30,Absolute,30,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="measurementsAndParameters.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 25</value>
@@ -7255,6 +7315,33 @@ kas Ψ sek.</value>
   <data name="&gt;&gt;label56.ZOrder" xml:space="preserve">
     <value>18</value>
   </data>
+  <data name="label57.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label57.Location" type="System.Drawing.Point, System.Drawing">
+    <value>633, 90</value>
+  </data>
+  <data name="label57.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 17</value>
+  </data>
+  <data name="label57.TabIndex" type="System.Int32, mscorlib">
+    <value>113</value>
+  </data>
+  <data name="label57.Text" xml:space="preserve">
+    <value>Pauzė [s]</value>
+  </data>
+  <data name="&gt;&gt;label57.Name" xml:space="preserve">
+    <value>label57</value>
+  </data>
+  <data name="&gt;&gt;label57.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label57.Parent" xml:space="preserve">
+    <value>tableLayoutPanel14</value>
+  </data>
+  <data name="&gt;&gt;label57.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
   <data name="tableLayoutPanel14.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -7283,7 +7370,7 @@ kas Ψ sek.</value>
     <value>0</value>
   </data>
   <data name="tableLayoutPanel14.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="label50" Row="0" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="lightEnergyBox" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label51" Row="1" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="lightLambdaBox" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="setLambdaOnOriel" Row="2" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="anotherOrielResponseLabel" Row="3" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="label53" Row="0" RowSpan="1" Column="4" ColumnSpan="2" /&gt;&lt;Control Name="label54" Row="0" RowSpan="1" Column="6" ColumnSpan="1" /&gt;&lt;Control Name="stopEnergyBox" Row="1" RowSpan="1" Column="6" ColumnSpan="1" /&gt;&lt;Control Name="startEnergyBox" Row="1" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="plusEnergyButton" Row="1" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="minusEnergyButton" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="label55" Row="4" RowSpan="1" Column="4" ColumnSpan="2" /&gt;&lt;Control Name="measureTimesBox" Row="4" RowSpan="1" Column="6" ColumnSpan="1" /&gt;&lt;Control Name="stopAnotherThreadButton" Row="0" RowSpan="1" Column="8" ColumnSpan="1" /&gt;&lt;Control Name="runAnotherThreadButton" Row="1" RowSpan="2" Column="8" ColumnSpan="1" /&gt;&lt;Control Name="stepBoxForAnotherThread" Row="4" RowSpan="1" Column="8" ColumnSpan="1" /&gt;&lt;Control Name="fromMinimumCheckBox" Row="2" RowSpan="1" Column="4" ColumnSpan="2" /&gt;&lt;Control Name="label56" Row="4" RowSpan="1" Column="7" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,90,Absolute,90,Absolute,90,Absolute,90,Absolute,90,Absolute,90,Absolute,90,Absolute,90,Absolute,90,Absolute,90" /&gt;&lt;Rows Styles="Absolute,30,Absolute,30,Absolute,30,Absolute,30,Absolute,30,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="label50" Row="0" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="lightEnergyBox" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label51" Row="1" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="lightLambdaBox" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="setLambdaOnOriel" Row="2" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="anotherOrielResponseLabel" Row="3" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="label53" Row="0" RowSpan="1" Column="4" ColumnSpan="2" /&gt;&lt;Control Name="label54" Row="0" RowSpan="1" Column="6" ColumnSpan="1" /&gt;&lt;Control Name="stopEnergyBox" Row="1" RowSpan="1" Column="6" ColumnSpan="1" /&gt;&lt;Control Name="startEnergyBox" Row="1" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="plusEnergyButton" Row="1" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="minusEnergyButton" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="label55" Row="4" RowSpan="1" Column="4" ColumnSpan="2" /&gt;&lt;Control Name="measureTimesBox" Row="4" RowSpan="1" Column="6" ColumnSpan="1" /&gt;&lt;Control Name="stopAnotherThreadButton" Row="0" RowSpan="1" Column="8" ColumnSpan="1" /&gt;&lt;Control Name="runAnotherThreadButton" Row="1" RowSpan="2" Column="8" ColumnSpan="1" /&gt;&lt;Control Name="stepBoxForAnotherThread" Row="4" RowSpan="1" Column="8" ColumnSpan="1" /&gt;&lt;Control Name="fromMinimumCheckBox" Row="2" RowSpan="1" Column="4" ColumnSpan="2" /&gt;&lt;Control Name="label56" Row="4" RowSpan="1" Column="7" ColumnSpan="1" /&gt;&lt;Control Name="label57" Row="3" RowSpan="1" Column="7" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,90,Absolute,90,Absolute,90,Absolute,90,Absolute,90,Absolute,90,Absolute,90,Absolute,90,Absolute,90,Absolute,90" /&gt;&lt;Rows Styles="Absolute,30,Absolute,30,Absolute,30,Absolute,30,Absolute,30,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="otherThreadParameters.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 25</value>
@@ -7334,7 +7421,7 @@ kas Ψ sek.</value>
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;tabControl1.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="gassIndicatorLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7370,7 +7457,7 @@ kas Ψ sek.</value>
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;gassIndicatorLabel.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="tableLayoutPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -7400,7 +7487,7 @@ kas Ψ sek.</value>
     <value>0</value>
   </data>
   <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="closeButton" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="resultsViewChart" Row="3" RowSpan="1" Column="2" ColumnSpan="2" /&gt;&lt;Control Name="menuStrip1" Row="0" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="connectionParametersTab" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="microLEDTabs" Row="2" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="errorAndInfoTabs" Row="3" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="tabControl4" Row="2" RowSpan="1" Column="2" ColumnSpan="2" /&gt;&lt;Control Name="tabControl1" Row="1" RowSpan="1" Column="1" ColumnSpan="3" /&gt;&lt;Control Name="gassIndicatorLabel" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,420,Absolute,400,Absolute,400,Percent,100" /&gt;&lt;Rows Styles="Absolute,40,Absolute,200,Absolute,300,Percent,100,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="shutterStatusLabel" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="closeButton" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="resultsViewChart" Row="3" RowSpan="1" Column="2" ColumnSpan="2" /&gt;&lt;Control Name="menuStrip1" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="connectionParametersTab" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="microLEDTabs" Row="2" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="errorAndInfoTabs" Row="3" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="tabControl4" Row="2" RowSpan="1" Column="2" ColumnSpan="2" /&gt;&lt;Control Name="tabControl1" Row="1" RowSpan="1" Column="1" ColumnSpan="3" /&gt;&lt;Control Name="gassIndicatorLabel" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,420,Absolute,400,Absolute,400,Percent,100" /&gt;&lt;Rows Styles="Absolute,40,Absolute,200,Absolute,300,Percent,100,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <metadata name="readAnswerInBackgroundWorker.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>294, 14</value>
