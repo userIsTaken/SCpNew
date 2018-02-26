@@ -3195,6 +3195,7 @@ namespace SPcontrol
 
         private void runAnotherThreadButton_Click(object sender, EventArgs e)
         {
+            //slightly diffrent thread
             changePicture(0);
             MeasurementParameters mPar = new MeasurementParameters();
             mPar.Tq = (double)Tq_box.Value;
@@ -3212,6 +3213,7 @@ namespace SPcontrol
             mPar.StartingEnergy = (double)startEnergyBox.Value;
             mPar.EndingEnergy = (double)stopEnergyBox.Value;
             mPar.Counts = (double)measureTimesBox.Value;
+
             //===============================================================
             appendText();
             double time = (double)Ts_box.Value * 1.1;
@@ -3227,6 +3229,9 @@ namespace SPcontrol
             slightlyDifferentWorkerThread.RunWorkerAsync(mPar);
             runAnotherThreadButton.Enabled = false;
             stopAnotherThreadButton.Enabled = true;
+            //Keičiamos ašių ribos, kad nebūtų kitų verčių:
+            changeGraphAxis((double)startEnergyBox.Value, (double)stopEnergyBox.Value);
+            removePointsFromGraph();
 
         }
 
@@ -3292,10 +3297,13 @@ namespace SPcontrol
             try { 
             //=====
             double Count = mP.Counts;
-                Console.WriteLine(Count.ToString(), "Counts|", "|STEP", mP.Step);
-            double energy = mP.StartingEnergy;
+                Console.WriteLine("Try šaka");
+                Console.WriteLine(Count.ToString()+ "Counts|" + "|STEP" + mP.Step.ToString());
+            
                 for (double i = 0; i <= Count; i++)
-                {
+                { //for i šaka
+                    double energy = mP.StartingEnergy;
+                    Console.WriteLine(i.ToString() + " | i");
                     Thread.Sleep((int)mP.StandbyTime * 1000); //delay
                     while ((energy <= mP.EndingEnergy) && (!slightlyDifferentWorkerThread.CancellationPending))
                     {
@@ -3351,7 +3359,7 @@ namespace SPcontrol
                         energy = energy + mP.Step;
                         //====END of matavimai:
                     }
-                }
+                } //for šakos pabaiga
             }
             catch (Exception ex)
             {

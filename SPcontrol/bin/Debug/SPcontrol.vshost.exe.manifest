@@ -66,24 +66,24 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SPcontrol.exe" size="1203624">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SPcontrol.exe" size="1212840">
       <assemblyIdentity name="SPcontrol" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>C4wmUE+TiTIc+y0iG+EMIwEXVQU=</dsig:DigestValue>
+        <dsig:DigestValue>bsRRCs2/4Dshu9T5avaySpDQMpQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="SPcontrol.exe.config" size="184">
+  <file name="SPcontrol.exe.config" size="178">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>V4WyfI7Afij77ZC4Fb71+C3XBqM=</dsig:DigestValue>
+      <dsig:DigestValue>7xQ+AmKJmHkRdmzH8LUO5QjeSgo=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

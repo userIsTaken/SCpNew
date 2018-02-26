@@ -276,6 +276,7 @@
             this.standby_box = new System.Windows.Forms.NumericUpDown();
             this.label57 = new System.Windows.Forms.Label();
             this.delay_box = new System.Windows.Forms.NumericUpDown();
+            this.anothrButtonTocontrolShutter = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.resultsViewChart)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -2304,6 +2305,7 @@
             this.tableLayoutPanel14.Controls.Add(this.label56, 7, 4);
             this.tableLayoutPanel14.Controls.Add(this.label57, 7, 3);
             this.tableLayoutPanel14.Controls.Add(this.delay_box, 8, 3);
+            this.tableLayoutPanel14.Controls.Add(this.anothrButtonTocontrolShutter, 0, 4);
             this.tableLayoutPanel14.Name = "tableLayoutPanel14";
             // 
             // label50
@@ -2578,6 +2580,15 @@
             // 
             resources.ApplyResources(this.delay_box, "delay_box");
             this.delay_box.Name = "delay_box";
+            // 
+            // anothrButtonTocontrolShutter
+            // 
+            this.tableLayoutPanel14.SetColumnSpan(this.anothrButtonTocontrolShutter, 3);
+            resources.ApplyResources(this.anothrButtonTocontrolShutter, "anothrButtonTocontrolShutter");
+            this.anothrButtonTocontrolShutter.Name = "anothrButtonTocontrolShutter";
+            this.tableLayoutPanel14.SetRowSpan(this.anothrButtonTocontrolShutter, 2);
+            this.anothrButtonTocontrolShutter.UseVisualStyleBackColor = true;
+            this.anothrButtonTocontrolShutter.Click += new System.EventHandler(this.shutterStatusButton_Click);
             // 
             // SPControl
             // 
@@ -2941,6 +2952,7 @@
         private System.Windows.Forms.NumericUpDown standby_box;
         private System.Windows.Forms.Label label57;
         private System.Windows.Forms.NumericUpDown delay_box;
+        private System.Windows.Forms.Button anothrButtonTocontrolShutter;
     }
 }
 

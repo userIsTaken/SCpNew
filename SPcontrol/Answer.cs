@@ -185,9 +185,9 @@ namespace SPcontrol
                 this.CRC_code_should_be = crc_should_be;
             }
             
-            Console.WriteLine(BitConverter.ToString(data));
+           /* Console.WriteLine(BitConverter.ToString(data));
             Console.WriteLine(BitConverter.ToString(crc_from_controller));
-            Console.WriteLine(BitConverter.ToString(answer));
+            Console.WriteLine(BitConverter.ToString(answer));*/
            
         }
     }

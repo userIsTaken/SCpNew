@@ -71,3 +71,17 @@ C:\Users\A330Lab\Desktop\ThisIsNewSp\SPcontrol\bin\Debug\SPcontrol.application
 C:\Users\A330Lab\Desktop\ThisIsNewSp\SPcontrol\obj\Debug\SPcontrol.csprojResolveAssemblyReference.cache
 C:\Users\A330Lab\Desktop\ThisIsNewSp\SPcontrol\obj\Debug\SPcontrol.exe.manifest
 C:\Users\A330Lab\Desktop\ThisIsNewSp\SPcontrol\obj\Debug\SPcontrol.application
+C:\Users\A330Lab\Source\Repos\SCpNew\SPcontrol\bin\Debug\SPcontrol.exe.config
+C:\Users\A330Lab\Source\Repos\SCpNew\SPcontrol\obj\Debug\SPcontrol.csproj.ResolveComReference.cache
+C:\Users\A330Lab\Source\Repos\SCpNew\SPcontrol\obj\Debug\SPcontrol.exe
+C:\Users\A330Lab\Source\Repos\SCpNew\SPcontrol\obj\Debug\SPcontrol.pdb
+C:\Users\A330Lab\Source\Repos\SCpNew\SPcontrol\bin\Debug\SPcontrol.exe.manifest
+C:\Users\A330Lab\Source\Repos\SCpNew\SPcontrol\bin\Debug\SPcontrol.application
+C:\Users\A330Lab\Source\Repos\SCpNew\SPcontrol\bin\Debug\SPcontrol.exe
+C:\Users\A330Lab\Source\Repos\SCpNew\SPcontrol\bin\Debug\SPcontrol.pdb
+C:\Users\A330Lab\Source\Repos\SCpNew\SPcontrol\obj\Debug\SPcontrol.csprojResolveAssemblyReference.cache
+C:\Users\A330Lab\Source\Repos\SCpNew\SPcontrol\obj\Debug\SPcontrol.SPControl.resources
+C:\Users\A330Lab\Source\Repos\SCpNew\SPcontrol\obj\Debug\SPcontrol.Properties.Resources.resources
+C:\Users\A330Lab\Source\Repos\SCpNew\SPcontrol\obj\Debug\SPcontrol.csproj.GenerateResource.Cache
+C:\Users\A330Lab\Source\Repos\SCpNew\SPcontrol\obj\Debug\SPcontrol.exe.manifest
+C:\Users\A330Lab\Source\Repos\SCpNew\SPcontrol\obj\Debug\SPcontrol.application
