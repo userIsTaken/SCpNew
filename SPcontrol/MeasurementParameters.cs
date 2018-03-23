@@ -75,6 +75,8 @@ namespace SPcontrol
 
         public double StandbyTime;
 
+        public int _Points;
+
 
         public MeasurementParameters()
         {

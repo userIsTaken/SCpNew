@@ -220,7 +220,7 @@ namespace SPcontrol
         public static string getNiPerMinute(double Ni, double t_in_seconds)
         {
             string NiPerminute = String.Empty;
-            double x =Math.Round(( 60.0d * Ni / t_in_seconds), 0); //Ni per minutę, jei t - sekundėmis! tik sveiki skaičiai;
+            double x =Math.Round(( 60.0d * Ni / t_in_seconds), 0, MidpointRounding.AwayFromZero); //Ni per minutę, jei t - sekundėmis! tik sveiki skaičiai;
             NiPerminute = Convert.ToString(x, CultureInfo.InvariantCulture);
             return NiPerminute;
         }
@@ -303,7 +303,7 @@ namespace SPcontrol
         public static double returnCounts(double kiekis, double nuo, double iki, double step)
         {
             double counts = 0;
-            counts = kiekis * 2 + (iki - nuo) / step * kiekis;
+            counts = kiekis * 2 + ((iki - nuo) / step+1) * kiekis;
             return counts;
         }
     }

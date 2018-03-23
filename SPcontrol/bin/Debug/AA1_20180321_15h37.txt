@@ -1,0 +1,4 @@
+Eil.Nr.   ;hv, [eV]  ;Ni vertė  ;Ni/min.   ;Sqrt(Ni)  ;Cor(N/L)  ;Įtampa, kV;Dujos   ;Laikas    ;
+
+
+? Ts :  5   Tz :  0   Tq :   0    Vq :  0   Cth :  2  2018-03-21 15:37:50  ;

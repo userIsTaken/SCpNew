@@ -35,6 +35,7 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.shutterStatusLabel = new System.Windows.Forms.Label();
             this.closeButton = new System.Windows.Forms.Button();
             this.resultsViewChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -115,7 +116,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.orielControlTab = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.shutterStatusLabel = new System.Windows.Forms.Label();
             this.timeDelayedShutterControlBtn = new System.Windows.Forms.Button();
             this.timeToBeOpenedShutter = new System.Windows.Forms.NumericUpDown();
             this.shutterProgress = new System.Windows.Forms.ProgressBar();
@@ -201,6 +201,7 @@
             this.outputBox = new System.Windows.Forms.TextBox();
             this.fileNameFieldBox = new System.Windows.Forms.TextBox();
             this.dateBoxEntry = new System.Windows.Forms.TextBox();
+            this.colNamesInLabel = new System.Windows.Forms.Label();
             this.saveResPage = new System.Windows.Forms.TabPage();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.measurementsAndParameters = new System.Windows.Forms.TabPage();
@@ -226,6 +227,11 @@
             this.stepValueBox = new System.Windows.Forms.NumericUpDown();
             this.fromSmallestBox = new System.Windows.Forms.CheckBox();
             this.label31 = new System.Windows.Forms.Label();
+            this.shutterStatusButton = new System.Windows.Forms.Button();
+            this.label52 = new System.Windows.Forms.Label();
+            this.standby_box = new System.Windows.Forms.NumericUpDown();
+            this.label58 = new System.Windows.Forms.Label();
+            this.verbosityLevelBox = new System.Windows.Forms.ComboBox();
             this.otherFunctions = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
@@ -265,18 +271,17 @@
             this.stepBoxForAnotherThread = new System.Windows.Forms.NumericUpDown();
             this.fromMinimumCheckBox = new System.Windows.Forms.CheckBox();
             this.label56 = new System.Windows.Forms.Label();
+            this.label57 = new System.Windows.Forms.Label();
+            this.delay_box = new System.Windows.Forms.NumericUpDown();
+            this.anothrButtonTocontrolShutter = new System.Windows.Forms.Button();
+            this.label59 = new System.Windows.Forms.Label();
+            this.verbosityLevelBox2 = new System.Windows.Forms.ComboBox();
             this.gassIndicatorLabel = new System.Windows.Forms.Label();
             this.readAnswerInBackgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.shutterControlWithdelay = new System.ComponentModel.BackgroundWorker();
             this.longMeasurementsThreadWorker = new System.ComponentModel.BackgroundWorker();
             this.currentLEDthread = new System.ComponentModel.BackgroundWorker();
             this.slightlyDifferentWorkerThread = new System.ComponentModel.BackgroundWorker();
-            this.shutterStatusButton = new System.Windows.Forms.Button();
-            this.label52 = new System.Windows.Forms.Label();
-            this.standby_box = new System.Windows.Forms.NumericUpDown();
-            this.label57 = new System.Windows.Forms.Label();
-            this.delay_box = new System.Windows.Forms.NumericUpDown();
-            this.anothrButtonTocontrolShutter = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.resultsViewChart)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -347,6 +352,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.energyDownToValueBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.measureTimesforOnePointBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stepValueBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.standby_box)).BeginInit();
             this.otherFunctions.SuspendLayout();
             this.tableLayoutPanel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rigol_startCurrentBox)).BeginInit();
@@ -363,7 +369,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.startEnergyBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.measureTimesBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stepBoxForAnotherThread)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.standby_box)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.delay_box)).BeginInit();
             this.SuspendLayout();
             // 
@@ -381,6 +386,11 @@
             this.tableLayoutPanel1.Controls.Add(this.tabControl1, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.gassIndicatorLabel, 2, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            // 
+            // shutterStatusLabel
+            // 
+            resources.ApplyResources(this.shutterStatusLabel, "shutterStatusLabel");
+            this.shutterStatusLabel.Name = "shutterStatusLabel";
             // 
             // closeButton
             // 
@@ -1118,11 +1128,6 @@
             this.tableLayoutPanel7.Controls.Add(this.shutterProgress, 3, 1);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             // 
-            // shutterStatusLabel
-            // 
-            resources.ApplyResources(this.shutterStatusLabel, "shutterStatusLabel");
-            this.shutterStatusLabel.Name = "shutterStatusLabel";
-            // 
             // timeDelayedShutterControlBtn
             // 
             this.tableLayoutPanel7.SetColumnSpan(this.timeDelayedShutterControlBtn, 2);
@@ -1813,9 +1818,10 @@
             // 
             resources.ApplyResources(this.tableLayoutPanel5, "tableLayoutPanel5");
             this.tableLayoutPanel5.Controls.Add(this.saveFileButton, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.outputBox, 0, 1);
+            this.tableLayoutPanel5.Controls.Add(this.outputBox, 0, 2);
             this.tableLayoutPanel5.Controls.Add(this.fileNameFieldBox, 1, 0);
             this.tableLayoutPanel5.Controls.Add(this.dateBoxEntry, 3, 0);
+            this.tableLayoutPanel5.Controls.Add(this.colNamesInLabel, 0, 1);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             // 
             // saveFileButton
@@ -1830,6 +1836,7 @@
             this.tableLayoutPanel5.SetColumnSpan(this.outputBox, 4);
             resources.ApplyResources(this.outputBox, "outputBox");
             this.outputBox.Name = "outputBox";
+            this.tableLayoutPanel5.SetRowSpan(this.outputBox, 2);
             // 
             // fileNameFieldBox
             // 
@@ -1841,6 +1848,12 @@
             // 
             resources.ApplyResources(this.dateBoxEntry, "dateBoxEntry");
             this.dateBoxEntry.Name = "dateBoxEntry";
+            // 
+            // colNamesInLabel
+            // 
+            resources.ApplyResources(this.colNamesInLabel, "colNamesInLabel");
+            this.tableLayoutPanel5.SetColumnSpan(this.colNamesInLabel, 4);
+            this.colNamesInLabel.Name = "colNamesInLabel";
             // 
             // saveResPage
             // 
@@ -1892,6 +1905,8 @@
             this.tableLayoutPanel9.Controls.Add(this.shutterStatusButton, 2, 4);
             this.tableLayoutPanel9.Controls.Add(this.label52, 7, 3);
             this.tableLayoutPanel9.Controls.Add(this.standby_box, 8, 3);
+            this.tableLayoutPanel9.Controls.Add(this.label58, 7, 0);
+            this.tableLayoutPanel9.Controls.Add(this.verbosityLevelBox, 7, 1);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             // 
             // useLptBox
@@ -2115,6 +2130,40 @@
             resources.ApplyResources(this.label31, "label31");
             this.label31.Name = "label31";
             // 
+            // shutterStatusButton
+            // 
+            this.tableLayoutPanel9.SetColumnSpan(this.shutterStatusButton, 2);
+            resources.ApplyResources(this.shutterStatusButton, "shutterStatusButton");
+            this.shutterStatusButton.Name = "shutterStatusButton";
+            this.shutterStatusButton.UseVisualStyleBackColor = true;
+            this.shutterStatusButton.Click += new System.EventHandler(this.shutterStatusButton_Click);
+            // 
+            // label52
+            // 
+            resources.ApplyResources(this.label52, "label52");
+            this.label52.Name = "label52";
+            // 
+            // standby_box
+            // 
+            resources.ApplyResources(this.standby_box, "standby_box");
+            this.standby_box.Name = "standby_box";
+            // 
+            // label58
+            // 
+            resources.ApplyResources(this.label58, "label58");
+            this.label58.Name = "label58";
+            // 
+            // verbosityLevelBox
+            // 
+            resources.ApplyResources(this.verbosityLevelBox, "verbosityLevelBox");
+            this.verbosityLevelBox.FormattingEnabled = true;
+            this.verbosityLevelBox.Items.AddRange(new object[] {
+            resources.GetString("verbosityLevelBox.Items"),
+            resources.GetString("verbosityLevelBox.Items1"),
+            resources.GetString("verbosityLevelBox.Items2")});
+            this.verbosityLevelBox.Name = "verbosityLevelBox";
+            this.verbosityLevelBox.SelectedIndexChanged += new System.EventHandler(this.verbosityLevelBox_SelectedIndexChanged);
+            // 
             // otherFunctions
             // 
             this.otherFunctions.Controls.Add(this.tableLayoutPanel12);
@@ -2306,6 +2355,8 @@
             this.tableLayoutPanel14.Controls.Add(this.label57, 7, 3);
             this.tableLayoutPanel14.Controls.Add(this.delay_box, 8, 3);
             this.tableLayoutPanel14.Controls.Add(this.anothrButtonTocontrolShutter, 0, 4);
+            this.tableLayoutPanel14.Controls.Add(this.label59, 7, 0);
+            this.tableLayoutPanel14.Controls.Add(this.verbosityLevelBox2, 7, 1);
             this.tableLayoutPanel14.Name = "tableLayoutPanel14";
             // 
             // label50
@@ -2509,6 +2560,41 @@
             resources.ApplyResources(this.label56, "label56");
             this.label56.Name = "label56";
             // 
+            // label57
+            // 
+            resources.ApplyResources(this.label57, "label57");
+            this.label57.Name = "label57";
+            // 
+            // delay_box
+            // 
+            resources.ApplyResources(this.delay_box, "delay_box");
+            this.delay_box.Name = "delay_box";
+            // 
+            // anothrButtonTocontrolShutter
+            // 
+            this.tableLayoutPanel14.SetColumnSpan(this.anothrButtonTocontrolShutter, 3);
+            resources.ApplyResources(this.anothrButtonTocontrolShutter, "anothrButtonTocontrolShutter");
+            this.anothrButtonTocontrolShutter.Name = "anothrButtonTocontrolShutter";
+            this.tableLayoutPanel14.SetRowSpan(this.anothrButtonTocontrolShutter, 2);
+            this.anothrButtonTocontrolShutter.UseVisualStyleBackColor = true;
+            this.anothrButtonTocontrolShutter.Click += new System.EventHandler(this.shutterStatusButton_Click);
+            // 
+            // label59
+            // 
+            resources.ApplyResources(this.label59, "label59");
+            this.label59.Name = "label59";
+            // 
+            // verbosityLevelBox2
+            // 
+            resources.ApplyResources(this.verbosityLevelBox2, "verbosityLevelBox2");
+            this.verbosityLevelBox2.FormattingEnabled = true;
+            this.verbosityLevelBox2.Items.AddRange(new object[] {
+            resources.GetString("verbosityLevelBox2.Items"),
+            resources.GetString("verbosityLevelBox2.Items1"),
+            resources.GetString("verbosityLevelBox2.Items2")});
+            this.verbosityLevelBox2.Name = "verbosityLevelBox2";
+            this.verbosityLevelBox2.SelectedIndexChanged += new System.EventHandler(this.verbosityLevelBox2_SelectedIndexChanged);
+            // 
             // gassIndicatorLabel
             // 
             resources.ApplyResources(this.gassIndicatorLabel, "gassIndicatorLabel");
@@ -2552,43 +2638,6 @@
             this.slightlyDifferentWorkerThread.DoWork += new System.ComponentModel.DoWorkEventHandler(this.slightlyDifferentWorkerThread_DoWork);
             this.slightlyDifferentWorkerThread.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.slightlyDifferentWorkerThread_ProgressChanged);
             this.slightlyDifferentWorkerThread.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.slightlyDifferentWorkerThread_RunWorkerCompleted);
-            // 
-            // shutterStatusButton
-            // 
-            this.tableLayoutPanel9.SetColumnSpan(this.shutterStatusButton, 2);
-            resources.ApplyResources(this.shutterStatusButton, "shutterStatusButton");
-            this.shutterStatusButton.Name = "shutterStatusButton";
-            this.shutterStatusButton.UseVisualStyleBackColor = true;
-            this.shutterStatusButton.Click += new System.EventHandler(this.shutterStatusButton_Click);
-            // 
-            // label52
-            // 
-            resources.ApplyResources(this.label52, "label52");
-            this.label52.Name = "label52";
-            // 
-            // standby_box
-            // 
-            resources.ApplyResources(this.standby_box, "standby_box");
-            this.standby_box.Name = "standby_box";
-            // 
-            // label57
-            // 
-            resources.ApplyResources(this.label57, "label57");
-            this.label57.Name = "label57";
-            // 
-            // delay_box
-            // 
-            resources.ApplyResources(this.delay_box, "delay_box");
-            this.delay_box.Name = "delay_box";
-            // 
-            // anothrButtonTocontrolShutter
-            // 
-            this.tableLayoutPanel14.SetColumnSpan(this.anothrButtonTocontrolShutter, 3);
-            resources.ApplyResources(this.anothrButtonTocontrolShutter, "anothrButtonTocontrolShutter");
-            this.anothrButtonTocontrolShutter.Name = "anothrButtonTocontrolShutter";
-            this.tableLayoutPanel14.SetRowSpan(this.anothrButtonTocontrolShutter, 2);
-            this.anothrButtonTocontrolShutter.UseVisualStyleBackColor = true;
-            this.anothrButtonTocontrolShutter.Click += new System.EventHandler(this.shutterStatusButton_Click);
             // 
             // SPControl
             // 
@@ -2684,6 +2733,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.energyDownToValueBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.measureTimesforOnePointBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stepValueBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.standby_box)).EndInit();
             this.otherFunctions.ResumeLayout(false);
             this.tableLayoutPanel12.ResumeLayout(false);
             this.tableLayoutPanel12.PerformLayout();
@@ -2702,7 +2752,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.startEnergyBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.measureTimesBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stepBoxForAnotherThread)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.standby_box)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.delay_box)).EndInit();
             this.ResumeLayout(false);
 
@@ -2953,6 +3002,11 @@
         private System.Windows.Forms.Label label57;
         private System.Windows.Forms.NumericUpDown delay_box;
         private System.Windows.Forms.Button anothrButtonTocontrolShutter;
+        private System.Windows.Forms.Label label58;
+        private System.Windows.Forms.ComboBox verbosityLevelBox;
+        private System.Windows.Forms.Label label59;
+        private System.Windows.Forms.ComboBox verbosityLevelBox2;
+        private System.Windows.Forms.Label colNamesInLabel;
     }
 }
 
