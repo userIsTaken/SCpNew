@@ -974,8 +974,8 @@ namespace SPcontrol
             parityBitBox.SelectedIndex = 0;
             baudRateBox.SelectedIndex = 11;
             stopBitsBox.SelectedIndex = 0;
-            verbosityLevelBox.SelectedIndex = 0;
-            verbosityLevelBox2.SelectedIndex = 0;
+            verbosityLevelBox.SelectedIndex = 1;
+            verbosityLevelBox2.SelectedIndex = 1;
             //Arduino code:
             dataBitsArduinoBox.SelectedIndex = 7;
             handshakeArduinoBox.SelectedIndex = 0;
@@ -1015,6 +1015,8 @@ namespace SPcontrol
             this.channelsListBox.SelectedIndex = 0;
             liveArduinoChart.ChartAreas[0].AxisX.Title = "Sekundės nuo stebėjimo pradžios [s]";
             liveArduinoChart.ChartAreas[0].AxisY.Title = "Dujų kiekis [s.v.]";
+            //verb_two_changed();
+            verb_one_changed();
             changePicture();
 
         }
@@ -1094,6 +1096,11 @@ namespace SPcontrol
 
         private void saveFileButton_Click(object sender, EventArgs e)
         {
+            Save_file();
+        }
+
+        private void Save_file()
+        {
             changePicture(0);
             //=============================================
             //Failo išsaugojimo funkcija;
@@ -1103,19 +1110,20 @@ namespace SPcontrol
             string FileName = String.Empty;
             string DataNow = ForInfoViewer.GetLongDate();
             this.dateBoxEntry.Text = DataNow;
-            if(filestr.Contains(".txt")|| filestr.Contains(".TXT")|| filestr.Contains(".dat"))
+            string CurrentVoltage = voltage42Vset35_in_kiloVolts.Value.ToString();
+            if (filestr.Contains(".txt") || filestr.Contains(".TXT") || filestr.Contains(".dat"))
             {
                 filename = filestr;
             }
             else
             {
-                filename = filestr+ "_"+dateBoxEntry.Text + ".txt";
+                filename = filestr + "_" + dateBoxEntry.Text + ".txt";
             }
             try
             {
                 if (File.Exists(filename))
                 {
-                    FileName =DataNow+"_"+ filename;
+                    FileName = DataNow + "_" + filename;
                 }
                 else
                 {
@@ -1135,12 +1143,12 @@ namespace SPcontrol
             try
             {
                 string fLine = colNamesInLabel.Text;
-                string allData = fLine+"\r\n"+outputBox.Text;
+                string allData = fLine + "\r\n" + outputBox.Text;
                 string ALL_Tex = allData.Replace("|", ";");
                 //===Pridedam prie failo galo matavimo parametrus:
-                string Parameters = ExternalFunctions.GetLongStringFromObjects("? Ts :",Ts_box.Value, " Tz :", Tz_box.Value, " Tq : ", Tq_box.Value, "  Vq :", Vq_box.Value, " Cth :", Cth_box.Value, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));//Klaustukas - neimportuoti tų eilučių, kas su ? prasideda.
+                string Parameters = ExternalFunctions.GetLongStringFromObjects("? Ts :", Ts_box.Value, " Tz :", Tz_box.Value, " Tq : ", Tq_box.Value, "  Vq :", Vq_box.Value, " Cth :", Cth_box.Value, " Įtampa, [kV] : ", CurrentVoltage, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));//Klaustukas - neimportuoti tų eilučių, kas su ? prasideda.
                 StreamWriter writer = new StreamWriter(FileName);
-                writer.Write(ALL_Tex+newLine+Parameters); //Importuojant geriau, kai skiriamasis simbolis yra ; o ne |, | naudojamas pseudolentelės formavimui;
+                writer.Write(ALL_Tex + newLine + Parameters); //Importuojant geriau, kai skiriamasis simbolis yra ; o ne |, | naudojamas pseudolentelės formavimui;
                 writer.Close();
                 //===Jei iki čia nenulūžo; tai viskas gerai ir statuse rodoma informacija:
                 appendText();
@@ -1153,9 +1161,9 @@ namespace SPcontrol
                 MatavimoNr = 0; //Kad iš naujo keliautų matavimo numeriai;
                 //this.fileNameFieldBox.Text = "AA1"; //Paliekam senąjį pavadinimą - svarbu kartais, kad nepakistų visgi.
                 this.dateBoxEntry.Text = ForInfoViewer.GetLongDate();
-                
+
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 appendText();
                 appendText("Klaida saugant duomenis į failą");
@@ -1604,7 +1612,7 @@ namespace SPcontrol
             mPar._Points = (int)counts;
             appendText("Matavimų taškų bus apytiksliai ", counts);
             appendText("Matavimai truks maždaug ", counts * time, " [s.]");
-            double minutes = (counts * (time+1) - (counts * time) % 60) / 60;
+            int minutes =(int)( (counts * (time+1) - (counts * time) % 60) / 60);
             appendText("Matavimai truks maždaug  ", minutes, " min. ", (int)((counts * (time+1)) % 60), " sekund.");
             appendText();
             //============================================
@@ -2218,23 +2226,28 @@ namespace SPcontrol
                 //Normuojam į minutę:
                 string NiPerMinute = ExternalFunctions.getNiPerMinute(mP.Ni, mP.CurrentMeasurementTime);
                 string SqrtNi = ExternalFunctions.SqrtNiPerMinute(mP.Ni, mP.CurrentMeasurementTime);
-                double CorrNi = LightCorrections.GetNiDividedByLight(mP.Ni, mP.EnergyValue, mP.CurrentMeasurementTime);
+                //double CorrNi = LightCorrections.GetNiDividedByLight(mP.Ni, mP.EnergyValue, mP.CurrentMeasurementTime);
+                IzoE isoE = new IzoE();
+                IzoQ isoQ = new IzoQ();
+                double CorrNi = isoE.GetNiDividedByLight(mP.Ni, mP.EnergyValue, mP.CurrentMeasurementTime);
+                double CorrQNi = isoQ.GetNiDividedByLight(mP.Ni, mP.EnergyValue, mP.CurrentMeasurementTime);
                 //dujų skaitiklio muskaitymas:
                 string gass_value = gassIndicatorLabel.Text.Replace("s.v.", "");
-                string curVoltage = voltage42Vset35_in_kiloVolts.Value.ToString();
+                //string curVoltage = voltage42Vset35_in_kiloVolts.Value.ToString();
+                updateGraphWithPoint(Math.Sqrt(CorrNi), mP.EnergyValue, 1);
                 if (mP.EnergyValue <= 0.0d)
                 {
                     if (verbosity == "0")
                     {
-                        this.outputBox.AppendText(ForInfoViewer.AddString(MatavimoNr, mP.CurrentLambda, mP.Ni, NiPerMinute, SqrtNi, curVoltage, gass_value, DateTime.Now.ToString("HH:mm:ss")));
+                        this.outputBox.AppendText(ForInfoViewer.AddString(MatavimoNr, mP.CurrentLambda, mP.Ni, NiPerMinute, SqrtNi,  gass_value, DateTime.Now.ToString("HH:mm:ss")));
                     }
                     else if (verbosity == "1")
                     {
-                        this.outputBox.AppendText(ForInfoViewer.AddString(MatavimoNr, mP.CurrentLambda, mP.Ni, NiPerMinute, SqrtNi, CorrNi, curVoltage, gass_value, DateTime.Now.ToString("HH:mm:ss")));
+                        this.outputBox.AppendText(ForInfoViewer.AddString(MatavimoNr, mP.CurrentLambda, CorrNi, CorrQNi, mP.Ni, NiPerMinute, SqrtNi,   gass_value, DateTime.Now.ToString("HH:mm:ss")));
                     }
                     else if (verbosity == "2")
                     {
-                        this.outputBox.AppendText(ForInfoViewer.AddString(MatavimoNr, mP.CurrentLambda, mP.Ni, NiPerMinute, SqrtNi, CorrNi, curVoltage));
+                        this.outputBox.AppendText(ForInfoViewer.AddString(MatavimoNr, mP.CurrentLambda, CorrNi, CorrQNi, mP.Ni, NiPerMinute, SqrtNi));
                     }
 
                 }
@@ -2242,15 +2255,15 @@ namespace SPcontrol
                 {
                     if (verbosity.Equals("0"))
                     {
-                        this.outputBox.AppendText(ForInfoViewer.AddString(MatavimoNr, Math.Round(mP.EnergyValue, 4, MidpointRounding.AwayFromZero), mP.Ni, NiPerMinute, SqrtNi, curVoltage, gass_value, DateTime.Now.ToString("HH:mm:ss")));
+                        this.outputBox.AppendText(ForInfoViewer.AddString(MatavimoNr, Math.Round(mP.EnergyValue, 4, MidpointRounding.AwayFromZero), mP.Ni, NiPerMinute, SqrtNi,  gass_value, DateTime.Now.ToString("HH:mm:ss")));
                     }
                     else if (verbosity.Equals("1"))
                     {
-                        this.outputBox.AppendText(ForInfoViewer.AddString(MatavimoNr, Math.Round(mP.EnergyValue, 4, MidpointRounding.AwayFromZero), mP.Ni, NiPerMinute, SqrtNi, CorrNi, curVoltage, gass_value, DateTime.Now.ToString("HH:mm:ss")));
+                        this.outputBox.AppendText(ForInfoViewer.AddString(MatavimoNr, Math.Round(mP.EnergyValue, 4, MidpointRounding.AwayFromZero), CorrNi, CorrQNi, mP.Ni, NiPerMinute, SqrtNi,   gass_value, DateTime.Now.ToString("HH:mm:ss")));
                     }
                     else if (verbosity == "2")
                     {
-                        this.outputBox.AppendText(ForInfoViewer.AddString(MatavimoNr, Math.Round(mP.EnergyValue, 4, MidpointRounding.AwayFromZero), mP.Ni, NiPerMinute, SqrtNi, CorrNi, curVoltage));
+                        this.outputBox.AppendText(ForInfoViewer.AddString(MatavimoNr, Math.Round(mP.EnergyValue, 4, MidpointRounding.AwayFromZero), CorrNi, CorrQNi, mP.Ni, NiPerMinute, SqrtNi));
                     }
 
                     //this.outputBox.AppendText(ForInfoViewer.AddString(MatavimoNr, Math.Round(mP.EnergyValue, 4), mP.Ni, NiPerMinute, SqrtNi,  curVoltage, gass_value, DateTime.Now.ToString("HH:mm:ss")));
@@ -2323,15 +2336,23 @@ namespace SPcontrol
         /*ilgų matavimų threado pabaiga*/
 
         //Grafiko atnaujinimui funkcija, kad kodas trumpesnis būtų?
-        private void updateGraphWithPoint(double Ni, double eV)
+        private void updateGraphWithPoint(double Ni, double eV, int AX = 0)
         {
-            if (eV >= 0.0d) {
-                resultsViewChart.Series["DATA"].Points.AddXY(eV, Ni);
-            }
-            else
+            if (AX == 0)
             {
-                appendText("Tamsinis rezultatas");
+                if (eV >= 0.0d)
+                {
+                    resultsViewChart.Series["DATA"].Points.AddXY(eV, Ni);
+                }
             }
+            else if (AX == 1)
+            {
+                if (eV >= 0.0d)
+                {
+                    resultsViewChart.Series["Corr"].Points.AddXY(eV, Ni);
+                }
+            }
+            //
         }
 
         private void changeGraphAxis(double min, double max)
@@ -2369,6 +2390,7 @@ namespace SPcontrol
         private void removePointsFromGraph()
         {
             this.resultsViewChart.Series[0].Points.Clear();
+            this.resultsViewChart.Series[1].Points.Clear();
         }
 
 
@@ -3256,7 +3278,7 @@ namespace SPcontrol
             mPar._Points = (int)counts;
             appendText("Matavimų taškų bus apytiksliai ", counts);
             appendText("Matavimai truks maždaug [s]", counts * time);
-            double minutes = (counts * (time+1) - (counts * time) % 60) / 60;
+            int minutes = (int)((counts * (time+1) - (counts * time) % 60) / 60);
             appendText("Matavimai truks maždaug  ", minutes, " min. ", (int)((counts * (time+1)) % 60), " sekund.");
             appendText();
             //======================================
@@ -3337,6 +3359,7 @@ namespace SPcontrol
             
                 for (double i = 0; i <= Count; i++)
                 { //for i šaka
+                    mP._save_ = false;
                     double energy = mP.StartingEnergy;
                     Console.WriteLine(i.ToString() + " | i");
                     Thread.Sleep((int)mP.StandbyTime * 1000); //delay
@@ -3363,6 +3386,7 @@ namespace SPcontrol
                                 if (longAts.AnswerCRCerrorCode == 0)
                                 {
                                     //mP.CurrentLambda = Commands.returnCurrentLambda(en); //dabartinė λ
+                                    mP._save_ = false;
                                     mP.EnergyValue = energy;//dabartinė energija;
                                     mP.Ni = longAts.Ni; //Grąžinama reikiama vertė;
                                     mP.CurrentLambda = Commands.returnCurrentLambda(energy); //atnaujina imformacija:
@@ -3394,6 +3418,10 @@ namespace SPcontrol
                         energy = energy + mP.Step;
                         //====END of matavimai:
                     }
+                    mP._save_ = true;
+                    mP._count_ =(int)i;
+                    slightlyDifferentWorkerThread.ReportProgress(100, mP);
+
                 } //for šakos pabaiga
             }
             catch (Exception ex)
@@ -3459,7 +3487,7 @@ namespace SPcontrol
         {
             MeasurementParameters mP = e.UserState as MeasurementParameters;
             int percents = e.ProgressPercentage;
-            if (mP.ExceptionCode == 0)
+            if (mP.ExceptionCode == 0 && !mP._save_ && !autoSaveEnabledBox.Checked)
             {
                 //Geras kodas
                 updateGraphWithPoint(mP.Ni, mP.EnergyValue);//grafikas atnaujintas
@@ -3468,38 +3496,43 @@ namespace SPcontrol
                 Console.WriteLine(verbosity + " : VERBOSITY");
                 string NiPerMinute = ExternalFunctions.getNiPerMinute(mP.Ni, mP.CurrentMeasurementTime);
                 string SqrtNi = ExternalFunctions.SqrtNiPerMinute(mP.Ni, mP.CurrentMeasurementTime);
-                double CorrNi = LightCorrections.GetNiDividedByLight(mP.Ni, mP.EnergyValue, mP.CurrentMeasurementTime);
+                //double CorrNi = LightCorrections.GetNiDividedByLight(mP.Ni, mP.EnergyValue, mP.CurrentMeasurementTime);
+                IzoE isoE = new IzoE();
+                IzoQ isoQ = new IzoQ();
+                double CorrNi = isoE.GetNiDividedByLight(mP.Ni, mP.EnergyValue, mP.CurrentMeasurementTime);
+                double CorrQNi = isoQ.GetNiDividedByLight(mP.Ni, mP.EnergyValue, mP.CurrentMeasurementTime);
                 //dujų skaitiklio muskaitymas:
                 string gass_value = gassIndicatorLabel.Text.Replace("s.v.", "");
-                string curVoltage = voltage42Vset35_in_kiloVolts.Value.ToString();
+                //string curVoltage = voltage42Vset35_in_kiloVolts.Value.ToString();
+                updateGraphWithPoint(Math.Sqrt(CorrNi), mP.EnergyValue, 1);
                 if (mP.EnergyValue <= 0.0d)
                 {
                     if (verbosity == "0")
                     {
-                        this.outputBox.AppendText(ForInfoViewer.AddString(MatavimoNr, mP.CurrentLambda, mP.Ni, NiPerMinute, SqrtNi, curVoltage, gass_value, DateTime.Now.ToString("HH:mm:ss")));
+                        this.outputBox.AppendText(ForInfoViewer.AddString(MatavimoNr, mP.CurrentLambda, mP.Ni, NiPerMinute, SqrtNi, gass_value, DateTime.Now.ToString("HH:mm:ss")));
                     }
                     else if (verbosity == "1")
                     {
-                        this.outputBox.AppendText(ForInfoViewer.AddString(MatavimoNr, mP.CurrentLambda, mP.Ni, NiPerMinute, SqrtNi, CorrNi, curVoltage, gass_value, DateTime.Now.ToString("HH:mm:ss")));
+                        this.outputBox.AppendText(ForInfoViewer.AddString(MatavimoNr, mP.CurrentLambda, CorrNi, CorrQNi, mP.Ni, NiPerMinute, SqrtNi, gass_value, DateTime.Now.ToString("HH:mm:ss")));
                     }
                     else if (verbosity == "2")
                     {
-                        this.outputBox.AppendText(ForInfoViewer.AddString(MatavimoNr, mP.CurrentLambda, mP.Ni, NiPerMinute, SqrtNi, CorrNi, curVoltage));
+                        this.outputBox.AppendText(ForInfoViewer.AddString(MatavimoNr, mP.CurrentLambda, CorrNi, CorrQNi, mP.Ni, NiPerMinute, SqrtNi));
                     }
                 }
                 else
                 {
                     if (verbosity.Equals("0"))
                     {
-                        this.outputBox.AppendText(ForInfoViewer.AddString(MatavimoNr, Math.Round(mP.EnergyValue, 4, MidpointRounding.AwayFromZero), mP.Ni, NiPerMinute, SqrtNi, curVoltage, gass_value, DateTime.Now.ToString("HH:mm:ss")));
+                        this.outputBox.AppendText(ForInfoViewer.AddString(MatavimoNr, Math.Round(mP.EnergyValue, 4, MidpointRounding.AwayFromZero), mP.Ni, NiPerMinute, SqrtNi,  gass_value, DateTime.Now.ToString("HH:mm:ss")));
                     }
                     else if (verbosity.Equals("1"))
                     {
-                        this.outputBox.AppendText(ForInfoViewer.AddString(MatavimoNr, Math.Round(mP.EnergyValue, 4, MidpointRounding.AwayFromZero), mP.Ni, NiPerMinute, SqrtNi, CorrNi, curVoltage, gass_value, DateTime.Now.ToString("HH:mm:ss")));
+                        this.outputBox.AppendText(ForInfoViewer.AddString(MatavimoNr, Math.Round(mP.EnergyValue, 4, MidpointRounding.AwayFromZero), CorrNi, CorrQNi, mP.Ni, NiPerMinute, SqrtNi,  gass_value, DateTime.Now.ToString("HH:mm:ss")));
                     }
                     else if (verbosity == "2")
                     {
-                        this.outputBox.AppendText(ForInfoViewer.AddString(MatavimoNr, Math.Round(mP.EnergyValue, 4, MidpointRounding.AwayFromZero), mP.Ni, NiPerMinute, SqrtNi, CorrNi, curVoltage));
+                        this.outputBox.AppendText(ForInfoViewer.AddString(MatavimoNr, Math.Round(mP.EnergyValue, 4, MidpointRounding.AwayFromZero), CorrNi, CorrQNi, mP.Ni, NiPerMinute, SqrtNi));
                     }
                 }
                 MatavimoNr++;//didinamas matavimo nr vienetu ir atvaziduojama infobloke;
@@ -3544,6 +3577,44 @@ namespace SPcontrol
                 //this.workerProgressBar.Value = 0;
 
             }
+            else if (mP.ExceptionCode == 0 && mP._save_ && autoSaveEnabledBox.Checked)
+            {
+                //Automatiškai saugojame ir išvalome kitiems duomenis:
+                try
+                {
+                    string FileName = fileNameFieldBox.Text + "_" + mP._count_.ToString() + ".txt";
+                    string fLine = colNamesInLabel.Text;
+                    string allData = fLine + "\r\n" + outputBox.Text;
+                    string ALL_Tex = allData.Replace("|", ";");
+                    string CurrentVoltage = voltage42Vset35_in_kiloVolts.Value.ToString();
+                    //===Pridedam prie failo galo matavimo parametrus:
+                    string Parameters = ExternalFunctions.GetLongStringFromObjects("? Ts :", Ts_box.Value, " Tz :", Tz_box.Value, " Tq : ", Tq_box.Value, "  Vq :", Vq_box.Value, " Cth :", Cth_box.Value, " Įtampa, [kV] : ", CurrentVoltage, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));//Klaustukas - neimportuoti tų eilučių, kas su ? prasideda.
+                    StreamWriter writer = new StreamWriter(FileName);
+                    writer.Write(ALL_Tex + newLine + Parameters); //Importuojant geriau, kai skiriamasis simbolis yra ; o ne |, | naudojamas pseudolentelės formavimui;
+                    writer.Close();
+                    //===Jei iki čia nenulūžo; tai viskas gerai ir statuse rodoma informacija:
+                    appendText();
+                    appendText("Išsaugota į failą " + FileName);
+                    appendText();
+                    changePicture(0);
+                    //====Išvaloma imformacija matavimų:
+                    this.outputBox.Text = String.Empty;
+                    //this.outputBox.Text = ForInfoViewer.FirstLine();
+                    MatavimoNr = 0; //Kad iš naujo keliautų matavimo numeriai;
+                                    //this.fileNameFieldBox.Text = "AA1"; //Paliekam senąjį pavadinimą - svarbu kartais, kad nepakistų visgi.
+                    this.dateBoxEntry.Text = ForInfoViewer.GetLongDate();
+
+                }
+                catch (Exception ex)
+                {
+                    appendText();
+                    appendText("Klaida saugant duomenis į failą");
+                    appendText(ex.ToString());
+                    appendText();
+                    changePicture(1);
+                }
+                //==========================
+            }
         }
 
 
@@ -3574,6 +3645,11 @@ namespace SPcontrol
 
         private void verbosityLevelBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            verb_one_changed();
+        }
+
+        private void verb_one_changed()
+        {
             if (verbosityLevelBox.Text.Equals("0"))
             {
                 string label = ForInfoViewer.FirstLine();
@@ -3592,6 +3668,11 @@ namespace SPcontrol
         }
 
         private void verbosityLevelBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            verb_two_changed();
+        }
+
+        private void verb_two_changed()
         {
             if (verbosityLevelBox2.Text.Equals("0"))
             {

@@ -9,7 +9,7 @@ namespace SPcontrol
         {
             string answ1 = String.Empty;
             string answ = String.Empty;
-            answ1 = ExternalFunctions.retStringEqualSize("Eil.Nr.", 10) + ExternalFunctions.retStringEqualSize("hv, [eV]", 10) + ExternalFunctions.retStringEqualSize("Ni vertė", 10) + ExternalFunctions.retStringEqualSize("Ni/min.", 10) + ExternalFunctions.retStringEqualSize("Sqrt(Ni)", 10) + ExternalFunctions.retStringEqualSize("Įtampa, kV", 10);
+            answ1 = ExternalFunctions.retStringEqualSize("Eil.Nr.", 10) + ExternalFunctions.retStringEqualSize("hv, [eV]", 10) + ExternalFunctions.retStringEqualSize("Ni vertė", 10) + ExternalFunctions.retStringEqualSize("Ni/min.", 10) + ExternalFunctions.retStringEqualSize("Sqrt(Ni)", 10);
             answ = answ1 + ExternalFunctions.retStringEqualSize("Dujos",8) + ExternalFunctions.retStringEqualSize("Laikas",10)+newLine;
             return answ;
         }
@@ -18,7 +18,7 @@ namespace SPcontrol
         {
             string answ1 = String.Empty;
             string answ = String.Empty;
-            answ1 = ExternalFunctions.retStringEqualSize("Eil.Nr.", 10) + ExternalFunctions.retStringEqualSize("hv, [eV]", 10) + ExternalFunctions.retStringEqualSize("Ni vertė", 10) + ExternalFunctions.retStringEqualSize("Ni/min.", 10) + ExternalFunctions.retStringEqualSize("Sqrt(Ni)", 10)+ ExternalFunctions.retStringEqualSize("Cor(N/L)", 10) + ExternalFunctions.retStringEqualSize("Įtampa, kV", 10);
+            answ1 = ExternalFunctions.retStringEqualSize("Eil.Nr.", 10) + ExternalFunctions.retStringEqualSize("hv, [eV]", 10) + ExternalFunctions.retStringEqualSize("Cor(N/Le) [min-1]", 10) + ExternalFunctions.retStringEqualSize("Cor(N/Lq) [min-1]", 10) + ExternalFunctions.retStringEqualSize("Ni vertė", 10) + ExternalFunctions.retStringEqualSize("Ni/min.", 10) + ExternalFunctions.retStringEqualSize("Sqrt(Ni)", 10);
             answ = answ1 + ExternalFunctions.retStringEqualSize("Dujos", 8) + ExternalFunctions.retStringEqualSize("Laikas", 10) + newLine;
             return answ;
         }
@@ -27,7 +27,7 @@ namespace SPcontrol
         {
             string answ1 = String.Empty;
             string answ = String.Empty;
-            answ1 = ExternalFunctions.retStringEqualSize("Eil.Nr.", 10) + ExternalFunctions.retStringEqualSize("hv, [eV]", 10) + ExternalFunctions.retStringEqualSize("Ni vertė", 10) + ExternalFunctions.retStringEqualSize("Ni/min.", 10) + ExternalFunctions.retStringEqualSize("Sqrt(Ni)", 10) + ExternalFunctions.retStringEqualSize("Cor(N/L)", 10) + ExternalFunctions.retStringEqualSize("Įtampa, kV", 10);
+            answ1 = ExternalFunctions.retStringEqualSize("Eil.Nr.", 10) + ExternalFunctions.retStringEqualSize("hv, [eV]", 10) + ExternalFunctions.retStringEqualSize("Cor(N/Le) [min-1]", 10) + ExternalFunctions.retStringEqualSize("Cor(N/Lq) [min-1]", 10) + ExternalFunctions.retStringEqualSize("Ni vertė", 10) + ExternalFunctions.retStringEqualSize("Ni/min.", 10) + ExternalFunctions.retStringEqualSize("Sqrt(Ni)", 10);
             //answ = answ1 + ExternalFunctions.retStringEqualSize("Dujos", 8) + ExternalFunctions.retStringEqualSize("Laikas", 10) + newLine;
             return answ1;
         }

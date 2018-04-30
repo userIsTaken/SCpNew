@@ -132,14 +132,6 @@ namespace SPcontrol
             else
             {
                 Console.WriteLine("THERE WASN'T LIGHT");
-                //try
-                //{
-                //    Console.WriteLine(LightArray[ev_rounded]);
-                //}
-                //catch (Exception ex)
-                //{
-                //    Console.WriteLine(ex.ToString());                 
-                //}
                 ats = (60.0d / time * Ni); //Nieko nekeičiam, jei nėra light[eV];, tik grąžiname (Ni);
             }
             return ats;

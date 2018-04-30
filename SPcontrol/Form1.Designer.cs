@@ -30,10 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SPControl));
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.shutterStatusLabel = new System.Windows.Forms.Label();
             this.closeButton = new System.Windows.Forms.Button();
@@ -282,6 +284,7 @@
             this.longMeasurementsThreadWorker = new System.ComponentModel.BackgroundWorker();
             this.currentLEDthread = new System.ComponentModel.BackgroundWorker();
             this.slightlyDifferentWorkerThread = new System.ComponentModel.BackgroundWorker();
+            this.autoSaveEnabledBox = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.resultsViewChart)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -432,11 +435,29 @@
             this.resultsViewChart.ChartAreas.Add(chartArea1);
             this.tableLayoutPanel1.SetColumnSpan(this.resultsViewChart, 2);
             resources.ApplyResources(this.resultsViewChart, "resultsViewChart");
+            legend1.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Bottom;
+            legend1.Name = "Legend1";
+            this.resultsViewChart.Legends.Add(legend1);
             this.resultsViewChart.Name = "resultsViewChart";
+            series1.BorderColor = System.Drawing.Color.Blue;
+            series1.BorderWidth = 2;
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
+            series1.Color = System.Drawing.Color.Blue;
+            series1.Legend = "Legend1";
+            series1.MarkerSize = 9;
             series1.Name = "DATA";
+            series2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            series2.BorderWidth = 2;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
+            series2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            series2.Legend = "Legend1";
+            series2.MarkerSize = 9;
+            series2.Name = "Corr";
+            series2.YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
             this.resultsViewChart.Series.Add(series1);
+            this.resultsViewChart.Series.Add(series2);
             // 
             // menuStrip1
             // 
@@ -1474,14 +1495,14 @@
             chartArea2.Name = "gassChartArea";
             this.liveArduinoChart.ChartAreas.Add(chartArea2);
             resources.ApplyResources(this.liveArduinoChart, "liveArduinoChart");
-            legend1.Name = "Legend1";
-            this.liveArduinoChart.Legends.Add(legend1);
+            legend2.Name = "Legend1";
+            this.liveArduinoChart.Legends.Add(legend2);
             this.liveArduinoChart.Name = "liveArduinoChart";
-            series2.ChartArea = "gassChartArea";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series2.Legend = "Legend1";
-            series2.Name = "Dujos";
-            this.liveArduinoChart.Series.Add(series2);
+            series3.ChartArea = "gassChartArea";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series3.Legend = "Legend1";
+            series3.Name = "Dujos";
+            this.liveArduinoChart.Series.Add(series3);
             // 
             // connectionParametersArduino
             // 
@@ -2357,6 +2378,7 @@
             this.tableLayoutPanel14.Controls.Add(this.anothrButtonTocontrolShutter, 0, 4);
             this.tableLayoutPanel14.Controls.Add(this.label59, 7, 0);
             this.tableLayoutPanel14.Controls.Add(this.verbosityLevelBox2, 7, 1);
+            this.tableLayoutPanel14.Controls.Add(this.autoSaveEnabledBox, 3, 3);
             this.tableLayoutPanel14.Name = "tableLayoutPanel14";
             // 
             // label50
@@ -2638,6 +2660,13 @@
             this.slightlyDifferentWorkerThread.DoWork += new System.ComponentModel.DoWorkEventHandler(this.slightlyDifferentWorkerThread_DoWork);
             this.slightlyDifferentWorkerThread.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.slightlyDifferentWorkerThread_ProgressChanged);
             this.slightlyDifferentWorkerThread.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.slightlyDifferentWorkerThread_RunWorkerCompleted);
+            // 
+            // autoSaveEnabledBox
+            // 
+            resources.ApplyResources(this.autoSaveEnabledBox, "autoSaveEnabledBox");
+            this.tableLayoutPanel14.SetColumnSpan(this.autoSaveEnabledBox, 3);
+            this.autoSaveEnabledBox.Name = "autoSaveEnabledBox";
+            this.autoSaveEnabledBox.UseVisualStyleBackColor = true;
             // 
             // SPControl
             // 
@@ -3007,6 +3036,7 @@
         private System.Windows.Forms.Label label59;
         private System.Windows.Forms.ComboBox verbosityLevelBox2;
         private System.Windows.Forms.Label colNamesInLabel;
+        private System.Windows.Forms.CheckBox autoSaveEnabledBox;
     }
 }
 

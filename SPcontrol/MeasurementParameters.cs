@@ -77,6 +77,9 @@ namespace SPcontrol
 
         public int _Points;
 
+        public bool _save_;
+        public int _count_;
+
 
         public MeasurementParameters()
         {

@@ -105,6 +105,8 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="hmp4000.cs" />
+    <Compile Include="IzoE.cs" />
+    <Compile Include="IzoP.cs" />
     <Compile Include="LightCorrections.cs" />
     <Compile Include="LPTLibraryCMDS.cs" />
     <Compile Include="MeasurementParameters.cs" />
