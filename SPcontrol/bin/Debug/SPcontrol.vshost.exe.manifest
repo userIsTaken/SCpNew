@@ -66,14 +66,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SPcontrol.exe" size="1229224">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SPcontrol.exe" size="1232808">
       <assemblyIdentity name="SPcontrol" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>9vbWUnZGS87a1ePAB6Hm86oPGZ8=</dsig:DigestValue>
+        <dsig:DigestValue>LQBApaeGqK038ivi1mA+J0k35pg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -68,8 +68,8 @@ namespace SPcontrol
 
         public int counter_rigol_started = 0;
         public bool rigol_started = false;
+        public bool gass_impuls_mode = false;
         
-
         public SPControl()
         {
             InitializeComponent();
@@ -980,7 +980,7 @@ namespace SPcontrol
             dataBitsArduinoBox.SelectedIndex = 7;
             handshakeArduinoBox.SelectedIndex = 0;
             parityArduinoBox.SelectedIndex = 0;
-            baudRateArduinoBox.SelectedIndex = 4;
+            baudRateArduinoBox.SelectedIndex = 11;
             stopBitsArduino.SelectedIndex = 0;
             string[] portNames = SerialPort.GetPortNames();
             foreach (string i in portNames)
@@ -3014,47 +3014,77 @@ namespace SPcontrol
 
         private void ArduinoPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
+            if (!useArduinoForGassControlBox.Checked)
+            { 
             try
             {
-                //?
-                string curTime = DateTime.Now.ToString("HH:mm:ss");
-                    //continiuosOutputfromArduino.AppendText(e.ToString() + newLine);
+                    //?
                     string data = arduinoPort.ReadExisting().Replace("\r\n", "");
-                arduinoPort.DiscardInBuffer(); //turėtų pagelbėti nusikratyti dvigubų verčių
-                int mod = (int)saveGassValueeverySecondBox.Value;
-                int reminder = gass_counter % mod;
-                if (reminder == 0)
-                {
-                    continiuosOutputfromArduino.AppendText(gass_counter.ToString() + "  " + curTime.Replace(":","o") + "   " + data + newLine);
-                    liveArduinoChart.Series["Dujos"].Points.AddXY(gass_counter, Convert.ToDouble(data));
-                }
-                this.gassIndicatorLabel.Text = data.Replace("\r\n", "") + " s.v.";
-                //*******Dujų kontrolės kodas:
-                int valueToKeep = (int)tryKeepThisGassValueBox.Value;
-                int deltaGass = (int)deltaGassValueBox.Value;
-                int gass_shutter_time = (int)gassShutterTimeBox.Value;
-                int checkGassTime = (int)watchgassEverySecondBox.Value;
-                if (tryControlGassFlowBox.Checked)
-                {
-                    if ((gass_counter % checkGassTime)==0) {
-                        OnOffGassShutter(valueToKeep, deltaGass, gass_shutter_time, checkGassTime, Convert.ToInt32(data));
-                    }
-                }
-               
-                //*******
-                gass_counter = gass_counter + 1;
-                //
-                if(gass_counter >= (int)gass_counter_limits_entry.Value)
-                {
-                    gass_counter = 0;
-                    if(gassAutoSaveBox.Checked)
+                    arduinoPort.DiscardInBuffer();
+                    if (data.Contains("GASS:"))
                     {
-                        SaveGassFile(); 
+
+                        string curTime = DateTime.Now.ToString("HH:mm:ss");
+                        //continiuosOutputfromArduino.AppendText(e.ToString() + newLine);
+                        //turėtų pagelbėti nusikratyti dvigubų verčių
+                        int mod = (int)saveGassValueeverySecondBox.Value;
+                        int reminder = gass_counter % mod;
+                        double gass_value = Convert.ToDouble(data.Replace("GASS:",""), CultureInfo.InvariantCulture);
+                        if (reminder == 0)
+                        {
+                            continiuosOutputfromArduino.AppendText(gass_counter.ToString() + "  " + curTime.Replace(":", "o") + "   " + data + newLine);
+                            liveArduinoChart.Series["Dujos"].Points.AddXY(gass_counter, gass_value);
+                        }
+                        this.gassIndicatorLabel.Text = data.Replace("\r\n", "") + " s.v.";
+                        //*******Dujų kontrolės kodas:
+                        int valueToKeep = (int)tryKeepThisGassValueBox.Value;
+                        int deltaGass = (int)deltaGassValueBox.Value;
+                        int gass_shutter_time = (int)gassShutterTimeBox.Value;
+                        int checkGassTime = (int)watchgassEverySecondBox.Value;
+                        double percent = (double)differenceBox.Value;
+                        double diff = valueToKeep * percent / 100.0d;
+                        if (tryControlGassFlowBox.Checked)
+                        {
+                            if (gass_value >= diff)
+                            {
+                                gass_impuls_mode = true;
+                            }
+                            else
+                            {
+                                gass_impuls_mode = false;
+                            }
+                            if ((gass_counter % checkGassTime) == 0 && gass_impuls_mode)
+                            {
+                                OnOffGassShutter(valueToKeep, deltaGass, gass_shutter_time, checkGassTime, Convert.ToInt32(gass_value));
+                            }
+                            else if (!gass_impuls_mode)
+                            {
+                                //JUST OPEN THE SHUTTER FOR GASES:
+                                instrument.WriteString("OUTP " + "CH2" + ",ON");
+                            }
+                        }
+
+                        //*******
+                        gass_counter = gass_counter + 1;
+                        //
+                        if (gass_counter >= (int)gass_counter_limits_entry.Value)
+                        {
+                            gass_counter = 0;
+                            if (gassAutoSaveBox.Checked)
+                            {
+                                SaveGassFile();
+                            }
+                            continiuosOutputfromArduino.Clear();
+                            liveArduinoChart.Series["Dujos"].Points.Clear();
+                        }
                     }
-                    continiuosOutputfromArduino.Clear();
-                    liveArduinoChart.Series["Dujos"].Points.Clear();
-                }
-                
+                    else
+                    {
+                        appendText();
+                        appendText(data);
+                        appendText();
+                    }
+
             }
             catch (Exception ex)
             {
@@ -3062,6 +3092,34 @@ namespace SPcontrol
                 appendText(ex.ToString());
                 /*Tai aotomatiškai parodys klaidų tab'ą*/
                 appendText();
+            }
+        }
+            else
+            {
+                string curTime = DateTime.Now.ToString("HH:mm:ss");
+                //continiuosOutputfromArduino.AppendText(e.ToString() + newLine);
+                string data = arduinoPort.ReadExisting().Replace("\r\n", "");
+                arduinoPort.DiscardInBuffer(); //turėtų pagelbėti nusikratyti dvigubų verčių
+                int mod = (int)saveGassValueeverySecondBox.Value;
+                int reminder = gass_counter % mod;
+                double gass_value = Convert.ToDouble(data);
+                if (reminder == 0)
+                {
+                    continiuosOutputfromArduino.AppendText(gass_counter.ToString() + "  " + curTime.Replace(":", "o") + "   " + data + newLine);
+                    liveArduinoChart.Series["Dujos"].Points.AddXY(gass_counter, gass_value);
+                }
+                gass_counter = gass_counter + 1;
+                //
+                if (gass_counter >= (int)gass_counter_limits_entry.Value)
+                {
+                    gass_counter = 0;
+                    if (gassAutoSaveBox.Checked)
+                    {
+                        SaveGassFile();
+                    }
+                    continiuosOutputfromArduino.Clear();
+                    liveArduinoChart.Series["Dujos"].Points.Clear();
+                }
             }
         }
 
@@ -3160,17 +3218,39 @@ namespace SPcontrol
             {
                 if (tryControlGassFlowBox.Checked)
                 {
+                     //tikrai išjungiame kanalą
+                                                                      //========ČIA NUSIUNČIA ARDUINO PARAMETRUS=====//
+                    if (useArduinoForGassControlBox.Checked)
+                    {
+                        //====PARAMETERS:
+                        string value_keep = ((int)tryKeepThisGassValueBox.Value).ToString("D3", CultureInfo.InvariantCulture); // bus visada trijų simbolių ilgio
+                        string percents = ((int)differenceBox.Value).ToString("D2");//bus visada dviejų simbolių ilgio
+                        arduinoPort.Write("pk" + value_keep + "c" + percents + "q");
+                        appendText("ARDUINO KOMANDA:");
+                        appendText("pk" + value_keep + "c" + percents + "q");
+                        //string delta_gass = deltaGassValueBox.Value.ToString("D3");
+                        //arduinoPort.Write("pd"+delta_gass+"q");
+                        //Thread.Sleep(1);
+                        arduinoPort.Write("begin");
+                    }
+                    //==========END ARDUINO = 
                     instrument.WriteString(":INST " + "CH2", true);
                     instrument.WriteString(":CURR " + "0.6");
                     instrument.WriteString(":CURR:PROT " + "0.7", true);
                     instrument.WriteString(":CURR:PROT:STAT ON", true);
                     instrument.WriteString(":VOLT " + "12.0", true);
-                    instrument.WriteString("OUTP " + "CH2" + ",OFF"); //tikrai išjungiame kanalą
+                    instrument.WriteString("OUTP " + "CH2" + ",OFF");
                 }
                 else if (!tryControlGassFlowBox.Checked)
                 {
                     instrument.WriteString(":VOLT " + "3.0", true);
                     instrument.WriteString("OUTP " + "CH2" + ",OFF");
+                    //========ČIA NUSIUNČIA ARDUINO PARAMETRUS=====//
+                    if (useArduinoForGassControlBox.Checked)
+                    {
+                        arduinoPort.Write("stop");
+                    }
+                    //==========END ARDUINO = 
                 }
             }
             catch (Exception ex)
@@ -3179,7 +3259,6 @@ namespace SPcontrol
                 appendText(ex.ToString());
                 appendText();
             }
-
         }
 
         private void lightEnergyBox_ValueChanged(object sender, EventArgs e)
@@ -3688,6 +3767,35 @@ namespace SPcontrol
             {
                 string label = ForInfoViewer.FirstLineTwo();
                 colNamesInLabel.Text = label;
+            }
+        }
+
+        private void tryKeepThisGassValueBox_ValueChanged(object sender, EventArgs e)
+        {
+            if(useArduinoForGassControlBox.Checked && tryControlGassFlowBox.Checked)
+            {
+                //Vykdome tik tada, jei naudojamas pats ARDUINO dujų valdymui
+                //====PARAMETERS:
+                string value_keep = ((int)tryKeepThisGassValueBox.Value).ToString("D3"); // bus visada trijų simbolių ilgio
+                string percents = ((int)differenceBox.Value).ToString("D2");//bus visada dviejų simbolių ilgio
+                arduinoPort.Write("pk" + value_keep + "c" + percents + "q");
+                appendText("ARDUINO KOMANDA:");
+                appendText("pk" + value_keep + "c" + percents + "q");
+
+            }
+        }
+
+        private void differenceBox_ValueChanged(object sender, EventArgs e)
+        {
+            if (useArduinoForGassControlBox.Checked && tryControlGassFlowBox.Checked)
+            {
+                //Vykdome tik tada, jei naudojamas pats ARDUINO dujų valdymui
+                //====PARAMETERS:
+                string value_keep = ((int)tryKeepThisGassValueBox.Value).ToString("D3"); // bus visada trijų simbolių ilgio
+                string percents = ((int)differenceBox.Value).ToString("D2");//bus visada dviejų simbolių ilgio
+                arduinoPort.Write("pk" + value_keep + "c" + percents + "q");
+                appendText("ARDUINO KOMANDA:");
+                appendText("pk" + value_keep + "c" + percents + "q");
             }
         }
     }

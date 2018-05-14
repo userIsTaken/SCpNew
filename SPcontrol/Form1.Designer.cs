@@ -170,8 +170,9 @@
             this.baudRateArduinoBox = new System.Windows.Forms.ComboBox();
             this.label38 = new System.Windows.Forms.Label();
             this.gassControl = new System.Windows.Forms.TabPage();
+            this.useArduinoForGassControlBox = new System.Windows.Forms.CheckBox();
             this.label49 = new System.Windows.Forms.Label();
-            this.gassShutterSleepTimeBox = new System.Windows.Forms.NumericUpDown();
+            this.differenceBox = new System.Windows.Forms.NumericUpDown();
             this.tryControlGassFlowBox = new System.Windows.Forms.CheckBox();
             this.watchgassEverySecondBox = new System.Windows.Forms.NumericUpDown();
             this.label48 = new System.Windows.Forms.Label();
@@ -278,13 +279,13 @@
             this.anothrButtonTocontrolShutter = new System.Windows.Forms.Button();
             this.label59 = new System.Windows.Forms.Label();
             this.verbosityLevelBox2 = new System.Windows.Forms.ComboBox();
+            this.autoSaveEnabledBox = new System.Windows.Forms.CheckBox();
             this.gassIndicatorLabel = new System.Windows.Forms.Label();
             this.readAnswerInBackgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.shutterControlWithdelay = new System.ComponentModel.BackgroundWorker();
             this.longMeasurementsThreadWorker = new System.ComponentModel.BackgroundWorker();
             this.currentLEDthread = new System.ComponentModel.BackgroundWorker();
             this.slightlyDifferentWorkerThread = new System.ComponentModel.BackgroundWorker();
-            this.autoSaveEnabledBox = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.resultsViewChart)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -331,7 +332,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.liveArduinoChart)).BeginInit();
             this.connectionParametersArduino.SuspendLayout();
             this.gassControl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gassShutterSleepTimeBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.differenceBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.watchgassEverySecondBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deltaGassValueBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gassShutterTimeBox)).BeginInit();
@@ -1609,8 +1610,9 @@
             // 
             // gassControl
             // 
+            this.gassControl.Controls.Add(this.useArduinoForGassControlBox);
             this.gassControl.Controls.Add(this.label49);
-            this.gassControl.Controls.Add(this.gassShutterSleepTimeBox);
+            this.gassControl.Controls.Add(this.differenceBox);
             this.gassControl.Controls.Add(this.tryControlGassFlowBox);
             this.gassControl.Controls.Add(this.watchgassEverySecondBox);
             this.gassControl.Controls.Add(this.label48);
@@ -1624,20 +1626,34 @@
             this.gassControl.Name = "gassControl";
             this.gassControl.UseVisualStyleBackColor = true;
             // 
+            // useArduinoForGassControlBox
+            // 
+            resources.ApplyResources(this.useArduinoForGassControlBox, "useArduinoForGassControlBox");
+            this.useArduinoForGassControlBox.Checked = true;
+            this.useArduinoForGassControlBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.useArduinoForGassControlBox.Name = "useArduinoForGassControlBox";
+            this.useArduinoForGassControlBox.UseVisualStyleBackColor = true;
+            // 
             // label49
             // 
             resources.ApplyResources(this.label49, "label49");
             this.label49.Name = "label49";
             // 
-            // gassShutterSleepTimeBox
+            // differenceBox
             // 
-            resources.ApplyResources(this.gassShutterSleepTimeBox, "gassShutterSleepTimeBox");
-            this.gassShutterSleepTimeBox.Maximum = new decimal(new int[] {
+            resources.ApplyResources(this.differenceBox, "differenceBox");
+            this.differenceBox.Maximum = new decimal(new int[] {
             250,
             0,
             0,
             0});
-            this.gassShutterSleepTimeBox.Name = "gassShutterSleepTimeBox";
+            this.differenceBox.Name = "differenceBox";
+            this.differenceBox.Value = new decimal(new int[] {
+            95,
+            0,
+            0,
+            0});
+            this.differenceBox.ValueChanged += new System.EventHandler(this.differenceBox_ValueChanged);
             // 
             // tryControlGassFlowBox
             // 
@@ -1700,6 +1716,7 @@
             0,
             0,
             0});
+            this.tryKeepThisGassValueBox.ValueChanged += new System.EventHandler(this.tryKeepThisGassValueBox_ValueChanged);
             // 
             // label45
             // 
@@ -2617,6 +2634,13 @@
             this.verbosityLevelBox2.Name = "verbosityLevelBox2";
             this.verbosityLevelBox2.SelectedIndexChanged += new System.EventHandler(this.verbosityLevelBox2_SelectedIndexChanged);
             // 
+            // autoSaveEnabledBox
+            // 
+            resources.ApplyResources(this.autoSaveEnabledBox, "autoSaveEnabledBox");
+            this.tableLayoutPanel14.SetColumnSpan(this.autoSaveEnabledBox, 3);
+            this.autoSaveEnabledBox.Name = "autoSaveEnabledBox";
+            this.autoSaveEnabledBox.UseVisualStyleBackColor = true;
+            // 
             // gassIndicatorLabel
             // 
             resources.ApplyResources(this.gassIndicatorLabel, "gassIndicatorLabel");
@@ -2660,13 +2684,6 @@
             this.slightlyDifferentWorkerThread.DoWork += new System.ComponentModel.DoWorkEventHandler(this.slightlyDifferentWorkerThread_DoWork);
             this.slightlyDifferentWorkerThread.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.slightlyDifferentWorkerThread_ProgressChanged);
             this.slightlyDifferentWorkerThread.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.slightlyDifferentWorkerThread_RunWorkerCompleted);
-            // 
-            // autoSaveEnabledBox
-            // 
-            resources.ApplyResources(this.autoSaveEnabledBox, "autoSaveEnabledBox");
-            this.tableLayoutPanel14.SetColumnSpan(this.autoSaveEnabledBox, 3);
-            this.autoSaveEnabledBox.Name = "autoSaveEnabledBox";
-            this.autoSaveEnabledBox.UseVisualStyleBackColor = true;
             // 
             // SPControl
             // 
@@ -2733,7 +2750,7 @@
             this.connectionParametersArduino.PerformLayout();
             this.gassControl.ResumeLayout(false);
             this.gassControl.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gassShutterSleepTimeBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.differenceBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.watchgassEverySecondBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deltaGassValueBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gassShutterTimeBox)).EndInit();
@@ -3002,7 +3019,7 @@
         private System.Windows.Forms.Label label48;
         private System.Windows.Forms.CheckBox tryControlGassFlowBox;
         private System.Windows.Forms.Label label49;
-        private System.Windows.Forms.NumericUpDown gassShutterSleepTimeBox;
+        private System.Windows.Forms.NumericUpDown differenceBox;
         private System.Windows.Forms.TabPage otherThreadParameters;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel14;
         private System.Windows.Forms.Label label50;
@@ -3037,6 +3054,7 @@
         private System.Windows.Forms.ComboBox verbosityLevelBox2;
         private System.Windows.Forms.Label colNamesInLabel;
         private System.Windows.Forms.CheckBox autoSaveEnabledBox;
+        private System.Windows.Forms.CheckBox useArduinoForGassControlBox;
     }
 }
 

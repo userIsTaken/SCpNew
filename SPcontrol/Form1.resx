@@ -4182,20 +4182,53 @@
   <data name="&gt;&gt;connectionParametersArduino.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="useArduinoForGassControlBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="useArduinoForGassControlBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="useArduinoForGassControlBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>232, 84</value>
+  </data>
+  <data name="useArduinoForGassControlBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 24</value>
+  </data>
+  <data name="useArduinoForGassControlBox.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="useArduinoForGassControlBox.Text" xml:space="preserve">
+    <value>ARDUINO?</value>
+  </data>
+  <data name="useArduinoForGassControlBox.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;useArduinoForGassControlBox.Name" xml:space="preserve">
+    <value>useArduinoForGassControlBox</value>
+  </data>
+  <data name="&gt;&gt;useArduinoForGassControlBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;useArduinoForGassControlBox.Parent" xml:space="preserve">
+    <value>gassControl</value>
+  </data>
+  <data name="&gt;&gt;useArduinoForGassControlBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="label49.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label49.Location" type="System.Drawing.Point, System.Drawing">
-    <value>178, 173</value>
+    <value>131, 167</value>
   </data>
   <data name="label49.Size" type="System.Drawing.Size, System.Drawing">
-    <value>67, 17</value>
+    <value>95, 17</value>
   </data>
   <data name="label49.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
   <data name="label49.Text" xml:space="preserve">
-    <value>TH laikas</value>
+    <value>Nuokrypis [%]</value>
   </data>
   <data name="&gt;&gt;label49.Name" xml:space="preserve">
     <value>label49</value>
@@ -4207,34 +4240,31 @@
     <value>gassControl</value>
   </data>
   <data name="&gt;&gt;label49.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
-  <data name="gassShutterSleepTimeBox.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="gassShutterSleepTimeBox.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="differenceBox.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 14pt</value>
   </data>
-  <data name="gassShutterSleepTimeBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>261, 167</value>
+  <data name="differenceBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>232, 162</value>
   </data>
-  <data name="gassShutterSleepTimeBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 29</value>
+  <data name="differenceBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 29</value>
   </data>
-  <data name="gassShutterSleepTimeBox.TabIndex" type="System.Int32, mscorlib">
+  <data name="differenceBox.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
-  <data name="&gt;&gt;gassShutterSleepTimeBox.Name" xml:space="preserve">
-    <value>gassShutterSleepTimeBox</value>
+  <data name="&gt;&gt;differenceBox.Name" xml:space="preserve">
+    <value>differenceBox</value>
   </data>
-  <data name="&gt;&gt;gassShutterSleepTimeBox.Type" xml:space="preserve">
+  <data name="&gt;&gt;differenceBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;gassShutterSleepTimeBox.Parent" xml:space="preserve">
+  <data name="&gt;&gt;differenceBox.Parent" xml:space="preserve">
     <value>gassControl</value>
   </data>
-  <data name="&gt;&gt;gassShutterSleepTimeBox.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;differenceBox.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="tryControlGassFlowBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -4261,7 +4291,7 @@
     <value>gassControl</value>
   </data>
   <data name="&gt;&gt;tryControlGassFlowBox.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="watchgassEverySecondBox.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 14pt</value>
@@ -4270,7 +4300,7 @@
     <value>178, 124</value>
   </data>
   <data name="watchgassEverySecondBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 29</value>
+    <value>48, 29</value>
   </data>
   <data name="watchgassEverySecondBox.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -4285,7 +4315,7 @@
     <value>gassControl</value>
   </data>
   <data name="&gt;&gt;watchgassEverySecondBox.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="label48.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -4312,7 +4342,7 @@
     <value>gassControl</value>
   </data>
   <data name="&gt;&gt;label48.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="deltaGassValueBox.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 14pt</value>
@@ -4321,7 +4351,7 @@
     <value>137, 82</value>
   </data>
   <data name="deltaGassValueBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 29</value>
+    <value>54, 29</value>
   </data>
   <data name="deltaGassValueBox.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -4336,7 +4366,7 @@
     <value>gassControl</value>
   </data>
   <data name="&gt;&gt;deltaGassValueBox.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="label47.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -4363,7 +4393,7 @@
     <value>gassControl</value>
   </data>
   <data name="&gt;&gt;label47.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="gassShutterTimeBox.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 14pt</value>
@@ -4372,7 +4402,7 @@
     <value>208, 38</value>
   </data>
   <data name="gassShutterTimeBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 29</value>
+    <value>49, 29</value>
   </data>
   <data name="gassShutterTimeBox.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -4387,7 +4417,7 @@
     <value>gassControl</value>
   </data>
   <data name="&gt;&gt;gassShutterTimeBox.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="label46.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -4414,7 +4444,7 @@
     <value>gassControl</value>
   </data>
   <data name="&gt;&gt;label46.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="tryKeepThisGassValueBox.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 14pt</value>
@@ -4438,7 +4468,7 @@
     <value>gassControl</value>
   </data>
   <data name="&gt;&gt;tryKeepThisGassValueBox.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="label45.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -4465,7 +4495,7 @@
     <value>gassControl</value>
   </data>
   <data name="&gt;&gt;label45.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="gassControl.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 25</value>
